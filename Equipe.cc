@@ -3,6 +3,10 @@
 #include <vector>
 #include "Equipe.hh"
 
+Equipe::Equipe(){
+    
+}
+
 Equipe::Equipe(std::string pays, std::string nom_eq, std::fstream fichierPrenom)
 {
     std::string nom;
@@ -28,8 +32,8 @@ Equipe::~Equipe()
 void Equipe::GoodBye(std::string nom){
     std::vector<Joueur>::iterator it;
     for(it=this->eq.begin(); it!=eq.end(); it++){
-        if(it->Nom==nom){
-            
+        if(it->getNom()==nom){
+            this->eq.erase(it);
         }
     }
 }

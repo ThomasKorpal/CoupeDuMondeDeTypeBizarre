@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "Joueur.hh"
+#include "personnages/Joueur.hh"
 #include "personnages/Coach.hh"
 
 #define NJOUEURS 11
@@ -14,6 +14,7 @@ private:
     std::string nom;
 
 public:
+    Equipe();
     Equipe(std::string pays, std::string nom_eq, std::fstream fichierPrenom);
     ~Equipe();
 
