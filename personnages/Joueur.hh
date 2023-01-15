@@ -5,12 +5,12 @@
 #include <string>
 #include <time.h>
 #include "participant.hh"
-#include "vers_string.hh"
+#include "../Random/vers_string.hh"
 #include <cstdlib>
 
 class Joueur : public participant 
 {
-private:
+protected:
     double connerie;
     int potentiel;
 public:
@@ -19,6 +19,8 @@ public:
     Joueur(Joueur& j);
     ~Joueur();
     void presentation();
+    int getPotentiel(){return this->potentiel;};
+    double getConnerie(){return this->connerie;};
 };
 
 #endif

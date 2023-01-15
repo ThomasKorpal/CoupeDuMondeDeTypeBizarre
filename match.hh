@@ -1,16 +1,15 @@
 #ifndef __MATCH_HH__
 #define __MATCH_HH__
 
-#include <iostream>
-#include <string>
 #include "Equipe.hh"
 
 class match
 {
 private:
-    /* data */
+    int score //1 si eq1 gagne, 0 si match nul, -1 si eq2 gagne
 public:
-    match(/* args */);
+    match();
+    match(Equipe eq1, Equipe eq2);
     ~match();
 };
 

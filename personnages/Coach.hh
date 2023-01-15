@@ -3,7 +3,7 @@
 #include <string>
 #include <time.h>
 #include "participant.hh"
-#include "vers_string.hh"
+#include "../Random/vers_string.hh"
 #include <cstdlib>
 
 class Coach : public participant

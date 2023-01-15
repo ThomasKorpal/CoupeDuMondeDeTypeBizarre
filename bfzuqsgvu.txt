@@ -1,0 +1,26 @@
+match*
+*
+match*
+*
+match*
+check map si top 1 ou 2
+
+si top 1 (3 vic):
+    => match final*
+
+si top 1 (2 vic):
+    =>*
+    => match final*
+
+si top 2:
+    => les dieux du foot vous accordent une chance de vous racheter car covid + diarhee + dents de sagesse + hemoroides chez autre equipe (event)
+    => match rattrapage avec equipe n'importe nawak*
+    si victoire :
+        => match final*
+
+else:
+"Ptn t'es a chier, meme ma mamie sait mieux gerer une equipe de foot"
+
+coupe du monde 
+=> match(eq1,eq2,proba) : oppose 2 equipes et simule un match (+ proba event)
+=> map (equipe;stats_match) avec stat_match = [points,nb_buts]

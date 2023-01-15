@@ -13,9 +13,10 @@ Equipe::Equipe(std::string pays, std::string nom_eq, std::fstream fichierPrenom)
 
     for(int i=0; i<NJOUEURS; i++){
         fichierPrenom>>nom;
-
         Joueur j(nom, pays);
         this->eq.push_back(j);
+        this->valeur+=j.getPotentiel();
+        this->valeur-=j.getConnerie();
     }
 
     fichierPrenom>>nom;
