@@ -27,5 +27,5 @@ Joueur::~Joueur()
 
 void Joueur::presentation()
 {
-    std::cout << this->Nom << " " << this->pays << " : " << vers_string(this->role) << ", " << std::to_string(this->connerie) << std::endl;
+    std::cout << "Nom : " << this->Nom << " Pays : " << this->pays << " Role : " << vers_string(this->role) << " Taux de connerie : " << std::to_string(this->connerie) << "Taux potentiel : " << std::to_string(this->potentiel) << "\n" << std::endl;
 }

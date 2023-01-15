@@ -1,4 +1,4 @@
-#include "vers_string.hh"
+#include "fonctions_random.hh"
 
 std::string vers_string(type role)
 {
@@ -16,4 +16,12 @@ std::string vers_string(type role)
             break;
     }
     return res;
+}
+
+double randomDoubleGenerator(double lower, double upper)
+{
+   std::uniform_real_distribution<double> unif(lower,upper);
+   std::default_random_engine re;
+   double a_random_double = unif(re);
+   return a_random_double;
 }

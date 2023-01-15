@@ -27,5 +27,5 @@ participant::~participant()
 
 void participant::presentation()
 {
-    std::cout << this->Nom << " " << this->pays << "\n" << std::endl;
+    std::cout << "Nom : " << this->Nom << " Pays : " << this->pays << "\n" << std::endl;
 }

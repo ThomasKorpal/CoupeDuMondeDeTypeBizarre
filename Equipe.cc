@@ -3,11 +3,9 @@
 #include <vector>
 #include "Equipe.hh"
 
-Equipe::Equipe(){
-    
-}
+Equipe::Equipe(){}
 
-Equipe::Equipe(std::string pays, std::string nom_eq, std::fstream fichierPrenom)
+Equipe::Equipe(std::string pays, std::fstream fichierPrenom)
 {
     std::string nom;
 

@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include "vers_string.hh"
+#include "../Random/fonctions_random.hh"
 
 class participant
 {

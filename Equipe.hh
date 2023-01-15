@@ -16,8 +16,9 @@ private:
 
 public:
     Equipe();
-    Equipe(std::string pays, std::string nom_eq, std::fstream fichierPrenom);
+    Equipe(std::string pays, std::fstream fichierPrenom);
     ~Equipe();
     int getValeur(){return this->valeur;};
+    std::string getNom(){return this->nom;};
     void GoodBye(std::string nom);
 };

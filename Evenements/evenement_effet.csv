@@ -1,0 +1,28 @@
+Evenement,blessure Joueur,butMarqué,interventionDesDieux,maladieJoueur,typeEvent
+Apparition d’une soucoupe d’alien au dessus du stade emportant l'équipe adverse momentanément,0,1,1,0,BUT
+Blessure du gardien adverse qui se retrouve à terre,1,1,0,0,JOUEUR
+Apparition d’un chien qui tacle un de vos joueurs,1,0,0,0,JOUEUR
+Diego Maradona revient sur Terre pour mettre un tacle à un joueur adverse,-1,0,1,0,JOUEUR
+Arbitre corrompu qui se retrouve contre vous,0,-1,0,0,BUT
+Ballon controlé par l'équipe adverse par une puce intégrée au ballon,0,-1,0,0,BUT
+Suite un hot dog un joueur de votre equipe se retrouve à terre et aux toilettes,0,0,0,1,JOUEUR
+Votre gardien trop concentré sur son téléphone,0,-1,0,0,BUT
+Suite à l'invocation du public un dragon apparait et fait fuir l'équipe adverse,0,1,1,0,BUT
+Après avoir mangé au CROUS votre joueur est tombé malade,0,0,0,1,JOUEUR
+Une de vos fans a envoyé un repas empoisonné à votre adeversaire,0,0,0,-1,JOUEUR
+Un de vos joueurs n
+
+
+
+Fais toi plaisir sur les evenements
+
+okokok :)
+
+T'as meme le droit a la bouffe, a des trucs qui n'ont rien a voir avec le foot
+ookokok hahahahahaha
+emoji diable
+Ca va finir comme les clés de l'escape
+chuuuuuuut
+xD
+
+le typeEvent c'est pour que ca soit plus simple a gerer 

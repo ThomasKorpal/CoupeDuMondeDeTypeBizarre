@@ -5,7 +5,7 @@
 #include <string>
 #include <time.h>
 #include "participant.hh"
-#include "../Random/vers_string.hh"
+#include "../Random/fonctions_random.hh"
 #include <cstdlib>
 
 class Joueur : public participant 

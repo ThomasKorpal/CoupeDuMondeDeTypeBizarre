@@ -1,9 +1,8 @@
 #include <iostream>
-#include <iostream>
 #include <string>
 #include <time.h>
 #include "participant.hh"
-#include "../Random/vers_string.hh"
+#include "../Random/fonctions_random.hh"
 #include <cstdlib>
 
 class Coach : public participant
@@ -16,4 +15,6 @@ public:
     Coach();
     ~Coach();
     void presentation();
+    int getRage(){return this->rage;};
+    double getExperience(){return this->experience;};
 };

@@ -20,5 +20,5 @@ Coach::~Coach()
 
 void Coach::presentation()
 {
-    std::cout << this->Nom << " " << this->pays << " : " << vers_string(this->role) << ", " << std::to_string(this->rage) << std::endl;
+    std::cout << "Nom : " << this->Nom << " Pays : " << this->pays << " Role : " << vers_string(this->role) << " Taux de rage : " << std::to_string(this->rage) << " Taux d'experience : " << std::to_string(this->experience) << "\n" << std::endl;
 }
