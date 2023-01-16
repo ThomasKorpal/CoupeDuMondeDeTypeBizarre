@@ -14,6 +14,7 @@ class Effet
         Effet();
         Effet(int a, int b, int c, int d);
         ~Effet();
+        void changementChoix(int choix);
 };
 
 #endif
