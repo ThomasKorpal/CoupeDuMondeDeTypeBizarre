@@ -14,7 +14,7 @@ match::~match()
 {
 }
 
-void match::play_match()
+int match::play_match()
 {
     int buts[2];
     randomIntroGenerator(this->tab_eq);
@@ -38,7 +38,8 @@ void match::play_match()
             else
             {
                 evenement event = evenement();
-                event.playEvenement();
+                Effet ef = event.playEvenement();
+                interpreteEffet(ef,buts,this->tab_eq);
                 std::cout << std::to_string((45*i)+j) << ": " << this->tab_eq[0].getNom() << " " << std::to_string(buts[0]) << ": " << std::to_string(buts[1]) << " " << this->tab_eq[1].getNom() << std::endl;
             }
         }

@@ -10,19 +10,12 @@ Votre gardien trop concentré sur son téléphone,0,-1,0,0,BUT,0
 Suite à l'invocation du public un dragon apparait et fait fuir l'équipe adverse,0,1,1,0,BUT,0
 Après avoir mangé au CROUS votre joueur est tombé malade,0,0,0,1,JOUEUR,0
 Une de vos fans a envoyé un repas empoisonné à votre adeversaire,0,0,0,-1,JOUEUR,0
-Un de vos joueurs n
-
-
-
-Fais toi plaisir sur les evenements
-
-okokok :)
-
-T'as meme le droit a la bouffe, a des trucs qui n'ont rien a voir avec le foot
-ookokok hahahahahaha
-emoji diable
-Ca va finir comme les clés de l'escape
-chuuuuuuut
-xD
-
-le typeEvent c'est pour que ca soit plus simple a gerer 
+Un de vos joueurs s'est trompé de but,0,-1,0,0,BUT,
+La fée clochette apparait et vous aveugle,1,0,1,0,JOUEUR,
+Suite un prank de la part de son coéquipier un joueur adverse se retrouve avec une diarhée,0,0,0,-1,JOUEUR,
+Un de vos joueurs a été punie par sa mère et n'a pas pu venir,0,0,0,1,JOUEUR,
+Un joueur adverse a perdu ses chaussures et a reçue une écharde,1,0,0,0,JOUEUR,
+Un suppoter s'est amusé a lancé des pierres et a touche un joueur adverse,-1,0,0,0,JOUEUR,
+Les astres se sont allignés et ont aveuglé vos adversaire,0,1,1,0,BUT,
+Un joueurs a reçu du ciel un plaque d'aluminium sur la tête,1,0,1,0,JOUEUR,
+Les anges ont décidé d'inverser les cages des équipes au moment ou vous allez marquer,0,-1,1,0,BUT,

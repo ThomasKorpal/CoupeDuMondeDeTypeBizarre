@@ -7,18 +7,45 @@ evenement::evenement(){}
 evenement::evenement(int lieuEvent, std::fstream fichierEvent)
 {
     int blessureJoueur, butMarqué, interventionDesDieux, maladieJoueur, isRandom;
-    std::string intitulé,r1,r2;
+    std::string intitule,r1,r2;
     typeEvent type;
     char* reste;
+    char* event_effet_type;
+
+    fichierEvent >> event_effet_type;
+    sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitule,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
+
+    if((lieuEvent==1 && type!=2) || (lieuEvent==2 && type==2)){
+        while(this->event.first == "") //&& eventFound == 0)
+            {
+                //fichierEvent >> event_effet_type;
+                //sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
+                if(type!=2)
+                {
+                    this->event = std::make_pair(intitule,Effet(blessureJoueur,butMarqué,interventionDesDieux,maladieJoueur));
+                    this->type = type;
+                    //eventFound = 1;
+                    this->isRandom=isRandom;
+                    if(this->isRandom)
+                    {
+                        sscanf(reste,"%s,%s",r1,r2);
+                        this->options.push_back(r1);
+                        this->options.push_back(r2);
+                    }
+                }
+            }
+    }
+
+/*
     switch(lieuEvent)
     {
-        char* event_effet_type;
+        //char* event_effet_type;
         int eventFound = 0;
         case 1:
-            while(this->event.first != "" && eventFound == 0)
+            while(this->event.first == "" && eventFound == 0)
             {
-                fichierEvent >> event_effet_type;
-                sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
+                //fichierEvent >> event_effet_type;
+                //sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
                 if(type!=2)
                 {
                     this->event = std::make_pair(intitulé,Effet(blessureJoueur,butMarqué,interventionDesDieux,maladieJoueur));
@@ -35,10 +62,10 @@ evenement::evenement(int lieuEvent, std::fstream fichierEvent)
             }
             break;
         case 2:
-            while(this->event.first != "" && eventFound == 0)
+            while(this->event.first == "" && eventFound == 0)
             {
-                fichierEvent >> event_effet_type;
-                sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
+                //fichierEvent >> event_effet_type;
+                //sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
                 if(type==2)
                 {
                     this->event = std::make_pair(intitulé,Effet(blessureJoueur,butMarqué,interventionDesDieux,maladieJoueur));
@@ -56,7 +83,7 @@ evenement::evenement(int lieuEvent, std::fstream fichierEvent)
             break;
         default:
             break;
-    }
+    } */
 }
 
 evenement::~evenement(){}
@@ -91,4 +118,10 @@ Effet evenement::playEvenement()
         default:
             break;
     }
+}
+
+
+void evenement::stockEvent(std::fstream fichierEvent)
+{
+
 }

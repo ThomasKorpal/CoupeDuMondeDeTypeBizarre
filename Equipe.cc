@@ -20,7 +20,8 @@ Equipe::Equipe(std::string pays, std::fstream fichierPrenom)
     fichierPrenom>>nom;
     Coach c(nom, pays);
     this->tb=c;
-
+    this->valeur+=c.getExperience();
+    this->valeur-=c.getRage();
     this->nom="Equipe de " + pays;
 }
 

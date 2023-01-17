@@ -20,5 +20,6 @@ public:
     ~Equipe();
     int getValeur(){return this->valeur;};
     std::string getNom(){return this->nom;};
+    void setValeur(int changement){return (this->valeur)-changement};
     void GoodBye(std::string nom);
 };

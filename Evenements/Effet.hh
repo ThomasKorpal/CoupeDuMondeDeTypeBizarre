@@ -7,7 +7,7 @@ class Effet
         //Ensemble d'indicateurs de l'effet d'un evenement
         //J'ai mis des -1 pour dire que ça intervient sur l'equipe d'adverse
         int blessureJoueur;
-        int butMarqué;
+        int butMarque;
         int interventionDesDieux;
         int maladieJoueur; 
     public:
@@ -15,6 +15,7 @@ class Effet
         Effet(int a, int b, int c, int d);
         ~Effet();
         void changementChoix(int choix);
+        int* getEffet();
 };
 
 #endif
