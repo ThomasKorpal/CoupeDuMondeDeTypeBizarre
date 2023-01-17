@@ -16,10 +16,10 @@ private:
 
 public:
     Equipe();
-    Equipe(std::string pays, std::fstream fichierPrenom);
+    Equipe(std::string pays, std::ifstream& fichierPrenom);
     ~Equipe();
     int getValeur(){return this->valeur;};
     std::string getNom(){return this->nom;};
-    void setValeur(int changement){return (this->valeur)-changement};
+    void setValeur(int changement){(this->valeur)-changement;};
     void GoodBye(std::string nom);
 };

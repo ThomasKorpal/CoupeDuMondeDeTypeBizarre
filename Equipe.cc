@@ -5,7 +5,7 @@
 
 Equipe::Equipe(){}
 
-Equipe::Equipe(std::string pays, std::fstream fichierPrenom)
+Equipe::Equipe(std::string pays, std::ifstream& fichierPrenom)
 {
     std::string nom;
 
