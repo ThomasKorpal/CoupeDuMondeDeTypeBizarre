@@ -2,7 +2,7 @@ match*
 *
 match*
 *
-match*
+mach*
 check map si top 1 ou 2
 
 si top 1 (3 vic):
@@ -24,3 +24,6 @@ else:
 coupe du monde 
 => match(eq1,eq2,proba) : oppose 2 equipes et simule un match (+ proba event)
 => map (equipe;stats_match) avec stat_match = [points,nb_buts]
+
+
+PS les efets maladie ou blessure ne pas oublier d'enveler des points pour le potentiel ou augmenter le niveau de conneries
