@@ -20,6 +20,6 @@ void randomIntroGenerator(std::vector<Equipe> tab_eq);
 
 int interpreteEffet(Effet ef, int tabButs[2], std::vector<Equipe> eqs);
 
-bool tabCointient(int array[], int size, int number);
+bool tabContient(int array[], int size, int number);
 
 #endif 

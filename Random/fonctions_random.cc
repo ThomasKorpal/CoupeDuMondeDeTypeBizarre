@@ -87,7 +87,7 @@ int interpreteEffet(Effet ef, int* tabButs, std::vector<Equipe> eqs)
     return 1;
 }
 
-bool tabCointient(int array[], int size, int number) 
+bool tabContient(int array[], int size, int number) 
 {
     for (int i = 0; i < size; i++) 
     {

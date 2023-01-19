@@ -54,4 +54,7 @@ int match::play_match()
         }
     }
     this->matchPlayed = 1;
+    if(buts[0] > buts[1]){return 3;}
+    if(buts[0] = buts[1]){return 0;}
+    if(buts[0] < buts[1]){return -3;}
 }

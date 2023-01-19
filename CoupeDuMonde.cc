@@ -6,11 +6,10 @@ CoupeDuMonde::CoupeDuMonde()
     std::string pays;
     for(int i=0; i<6; i++)
     {
-        printf("%d) %s",(3*i)+1,tab_pays[3*i]);
-        printf("        ");
-        printf("%d) %s",(3*i)+2,tab_pays[(3*i)+1]);
-        printf("        ");
-        printf("%d) %s\n\n",(3*i)+3,tab_pays[(3*i)+2]);
+        std::cout << std::to_string((3*i)+1) << ") " << tab_pays[3*i] << "        " << std::to_string((3*i)+2) << ") " << tab_pays[(3*i)+1] << "        " << std::to_string((3*i)+3) << ") " << tab_pays[(3*i)+2] << std::endl;
+        //printf("%d) %s",(3*i)+1,tab_pays[3*i]);
+        //printf("%d) %s",(3*i)+2,tab_pays[(3*i)+1]);
+        //printf("%d) %s\n\n",(3*i)+3,tab_pays[(3*i)+2]);
     }
     printf("Choisissez l'équipe que vous souhaitez contrôler : \n");
     int choix = -1;
