@@ -9,7 +9,7 @@
 
 #define NEVENTS 8
 
-typedef enum {BUT,JOUEUR,EQUIPE} typeEvent;
+typedef enum {TBUT,TJOUEUR,TEQUIPE} typeEvent;
 
 class evenement
 {

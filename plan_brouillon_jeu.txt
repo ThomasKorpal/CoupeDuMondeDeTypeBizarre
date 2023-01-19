@@ -27,3 +27,4 @@ coupe du monde
 
 
 PS les efets maladie ou blessure ne pas oublier d'enveler des points pour le potentiel ou augmenter le niveau de conneries
+surcharge opérateur << pour les equipes

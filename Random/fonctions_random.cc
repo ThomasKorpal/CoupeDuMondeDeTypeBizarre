@@ -84,5 +84,17 @@ int interpreteEffet(Effet ef, int* tabButs, std::vector<Equipe> eqs)
         default:
             break;
     }
-    return 1:
+    return 1;
+}
+
+bool tabCointient(int array[], int size, int number) 
+{
+    for (int i = 0; i < size; i++) 
+    {
+        if (array[i] == number) 
+        {
+            return true;
+        }
+    }
+    return false;
 }

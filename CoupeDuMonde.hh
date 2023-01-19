@@ -21,8 +21,10 @@ private:
     int nbPoints;
 public:
     CoupeDuMonde();
+    CoupeDuMonde(CoupeDuMonde& c);
     ~CoupeDuMonde();
     void playCDM(std::fstream f);
+    void presentation();
 };
 
 #endif
