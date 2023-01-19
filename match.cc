@@ -31,6 +31,7 @@ int match::play_match()
         for(int j=0; j<45; j++)
         {
             double randDou = randomDoubleGenerator(0,1);
+            /*
             if(randDou > this->probaEvent)
             {
                 std::cout << std::to_string((45*i)+j) << ": " << this->tab_eq[0].getNom() << " " << std::to_string(buts[0]) << ": " << std::to_string(buts[1]) << " " << this->tab_eq[1].getNom() << std::endl;
@@ -42,6 +43,14 @@ int match::play_match()
                 interpreteEffet(ef,buts,this->tab_eq);
                 std::cout << std::to_string((45*i)+j) << ": " << this->tab_eq[0].getNom() << " " << std::to_string(buts[0]) << ": " << std::to_string(buts[1]) << " " << this->tab_eq[1].getNom() << std::endl;
             }
+            */
+            if(randDou<=this->probaEvent)
+            {
+                evenement event = evenement();
+                Effet ef = event.playEvenement();
+                interpreteEffet(ef,buts,this->tab_eq);
+            }
+            std::cout << "Temps du jeu " << std::to_string((45*i)+j) << " : " << this->tab_eq[0].getNom() << " " << std::to_string(buts[0]) << ": " << std::to_string(buts[1]) << " " << this->tab_eq[1].getNom() << std::endl;
         }
     }
     this->matchPlayed = 1;
