@@ -11,35 +11,39 @@ CoupeDuMonde::CoupeDuMonde()
         //printf("%d) %s",(3*i)+2,tab_pays[(3*i)+1]);
         //printf("%d) %s\n\n",(3*i)+3,tab_pays[(3*i)+2]);
     }
-    printf("Choisissez l'équipe que vous souhaitez contrôler : \n");
+    std::cout<<"Choisissez l'équipe que vous souhaitez contrôler : " << std::endl;
     int choix = -1;
-    while(choix == -1 && choix < 18)
+    while(choix == -1 || choix > 18)
     {
         std::cin >> choix;
     }
     pays = tab_pays[choix-1];
     std::ifstream fichier("Random/prenom.txt");
-    this->eqControlee = Equipe(pays,fichier);
+    Equipe equi(pays,fichier);
+    this->eqControlee = equi;
+
     int tab[4];
     while(this->eqRencontree.size() != 4)
     {
         int tirage=rand()%18;
         if(!(tabContient(tab,4,tirage)) && tab_pays[tirage] != this->eqControlee.getNom())
         {
-            this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
+            //Equipe eq(tab_pays[tirage],fichier);
+            //this->eqRencontree.push_back(eq);
+            //this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
         }
 
     }
     this->nbPoints = 0;
 }
-
-CoupeDuMonde::CoupeDuMonde(CoupeDuMonde& c)
+/*
+CoupeDuMonde::CoupeDuMonde(const CoupeDuMonde& c)
 {
-    this->eqControlee = c.eqControlee;
-    this->eqRencontree = c.eqRencontree;
+//    this->eqControlee = c.eqControlee;
+//    this->eqRencontree = c.eqRencontree;
     this->nbPoints = c.nbPoints;
 }
-
+*/
 CoupeDuMonde::~CoupeDuMonde()
 {
 }

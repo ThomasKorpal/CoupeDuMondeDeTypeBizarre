@@ -1,9 +1,14 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
 #include "Equipe.hh"
 
 Equipe::Equipe(){}
+
+Equipe::Equipe(Equipe& e){
+    this->eq=e.eq;
+    this->nom=e.getNom();
+    this->valeur=e.getValeur();
+    Coach c(e.tb.getNom(), e.tb.getPays());
+    this->tb=c;
+}
 
 Equipe::Equipe(std::string pays, std::ifstream& fichierPrenom)
 {
@@ -30,10 +35,10 @@ Equipe::~Equipe()
 }
 
 void Equipe::GoodBye(std::string nom){
-    std::vector<Joueur>::iterator it;
-    for(it=this->eq.begin(); it!=eq.end(); it++){
-        if(it->getNom()==nom){
-            this->eq.erase(it);
+
+    for(size_t i=0; i<this->eq.size(); i++){
+        if(eq[i].getNom()==nom){
+            this->eq.erase(eq.begin()+i);
         }
     }
 }

@@ -3,6 +3,6 @@
 
 int main()
 {
-    CoupeDuMonde cdm = CoupeDuMonde();
-    cdm.presentation();
+    CoupeDuMonde cdm;
+    //cdm.presentation();
 }

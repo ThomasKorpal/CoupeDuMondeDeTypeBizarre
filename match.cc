@@ -1,19 +1,31 @@
 #include "match.hh"
-#include "Random/fonctions_random.hh"
-#include "Evenements/evenement.hh"
 
-match::match(Equipe eq1, Equipe eq2)
+
+
+match::match(){
+    /*this->probaEvent = randomDoubleGenerator((double)0,(double)1);
+    Equipe e1,e2;
+    this->tab_eq.push_back(e1);
+    this->tab_eq.push_back(e2);
+    this->matchPlayed = 0;*/
+}
+
+match::match(Equipe& eq1, Equipe& eq2)
 {
     this->probaEvent = randomDoubleGenerator((double)0,(double)1);
-    this->tab_eq.push_back(eq1);
-    this->tab_eq.push_back(eq1);
+   // Equipe e1(eq1);
+    //Equipe e2(eq2);
+    //this->tab_eq.push_back(eq1);
+    //this->tab_eq.push_back(eq2);
+    this->tab_eq[0]=eq1;
+    this->tab_eq[1]=eq2;
     this->matchPlayed = 0;
 }
 
 match::~match()
 {
 }
-
+/*
 int match::play_match()
 {
     int buts[2];
@@ -31,22 +43,12 @@ int match::play_match()
         for(int j=0; j<45; j++)
         {
             double randDou = randomDoubleGenerator(0,1);
-            /*
-            if(randDou > this->probaEvent)
-            {
-                std::cout << std::to_string((45*i)+j) << ": " << this->tab_eq[0].getNom() << " " << std::to_string(buts[0]) << ": " << std::to_string(buts[1]) << " " << this->tab_eq[1].getNom() << std::endl;
-            }
-            else
-            {
-                evenement event = evenement();
-                Effet ef = event.playEvenement();
-                interpreteEffet(ef,buts,this->tab_eq);
-                std::cout << std::to_string((45*i)+j) << ": " << this->tab_eq[0].getNom() << " " << std::to_string(buts[0]) << ": " << std::to_string(buts[1]) << " " << this->tab_eq[1].getNom() << std::endl;
-            }
-            */
+            
             if(randDou<=this->probaEvent)
             {
-                evenement event = evenement();
+                std::cout<<"Mis les valerus au pif : match.cc" <<std::endl;
+                std::ifstream fichier("evenement_effet.csv");
+                evenement event(1,fichier);
                 Effet ef = event.playEvenement();
                 interpreteEffet(ef,buts,this->tab_eq);
             }
@@ -55,6 +57,7 @@ int match::play_match()
     }
     this->matchPlayed = 1;
     if(buts[0] > buts[1]){return 3;}
-    if(buts[0] = buts[1]){return 0;}
+    if(buts[0] == buts[1]){return 0;}
     if(buts[0] < buts[1]){return -3;}
 }
+*/

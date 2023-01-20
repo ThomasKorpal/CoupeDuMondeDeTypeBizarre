@@ -13,6 +13,7 @@
 #include "Evenements/evenement.hh"
 
 std::string tab_pays[20]={"FRANCE","ESPAGNE","ANGLETERRE","COREE","ITALIE","GRECE","ALLEMAGNE","MEXIQUE","JAPON","ARGENTINE","BELGIQUE","CROATIE","MAROC","PORTUGAL","LIBAN","PAYS-BAS","EGYPTE","ALGERIE","CHINE"};
+
 class CoupeDuMonde
 {
 private:
@@ -21,7 +22,7 @@ private:
     int nbPoints;
 public:
     CoupeDuMonde();
-    CoupeDuMonde(CoupeDuMonde& c);
+ //   CoupeDuMonde(const CoupeDuMonde& c);
     ~CoupeDuMonde();
     void playCDM(std::fstream f);
     void presentation();
