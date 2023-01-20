@@ -1,7 +1,6 @@
 #include "match.hh"
 
 
-
 match::match(){
     /*this->probaEvent = randomDoubleGenerator((double)0,(double)1);
     Equipe e1,e2;

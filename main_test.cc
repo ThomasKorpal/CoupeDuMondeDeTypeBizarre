@@ -1,5 +1,4 @@
-#include <iostream>
-#include "match.hh"
+#include "Equipe.hh"
 
 int main()
 {
