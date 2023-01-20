@@ -20,7 +20,7 @@ private:
 public:
     Equipe();
     Equipe(std::string pays, std::ifstream& fichierPrenom);
-    Equipe(Equipe& e);
+    //Equipe(Equipe& e);
     ~Equipe();
     int getValeur(){return this->valeur;};
     std::string getNom(){return this->nom;};

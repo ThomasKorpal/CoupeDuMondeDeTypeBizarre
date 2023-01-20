@@ -1,6 +1,8 @@
 #ifndef __EFFET_HH__
 #define __EFFET_HH__
 
+#include <iostream>
+
 class Effet
 {
     private:

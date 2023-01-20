@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Effet.hh"
 #include <vector>
+#include <functional>
 #include <utility>
 #include <fstream>
 
@@ -20,7 +21,7 @@ class evenement
         typeEvent type;
     public:
         evenement();
-        evenement(int lieuEvent, std::fstream fichierEvent); //int lieuEvent pour dire si c'est un evenement dans un match ou entre deux matchs
+        evenement(int lieuEvent, std::ifstream& fichierEvent); //int lieuEvent pour dire si c'est un evenement dans un match ou entre deux matchs
         ~evenement();
         Effet playEvenement();
         void stockEvent(std::fstream fichierEvent);

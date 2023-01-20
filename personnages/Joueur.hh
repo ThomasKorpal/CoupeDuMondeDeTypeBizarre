@@ -5,7 +5,7 @@
 #include <string>
 #include <time.h>
 #include "participant.hh"
-#include "../Random/fonctions_random.hh"
+//#include "../Random/fonctions_random.hh"
 #include <cstdlib>
 
 class Joueur : public participant 
@@ -16,7 +16,7 @@ protected:
 public:
     Joueur(std::string Nom, std::string pays);
     Joueur();
-    Joueur(Joueur& j);
+    Joueur(const Joueur& j);
     ~Joueur();
     void presentation();
     int getPotentiel(){return this->potentiel;};

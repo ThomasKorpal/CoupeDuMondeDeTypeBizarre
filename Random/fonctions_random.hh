@@ -1,5 +1,5 @@
-#ifndef __VERSSTRING_HH__
-#define __VERSSTRING_HH__
+#ifndef __FONCTIONSRANDOM_HH__
+#define __FONCTIONSRANDOM_HH__
 
 #include <iostream>
 #include <string>
@@ -8,11 +8,11 @@
 #include "../Equipe.hh"
 #include "../Evenements/evenement.hh"
 
-typedef enum {JOUEUR,COACH, UNDEFINED} type;
+//typedef enum {JOUEUR,COACH, UNDEFINED} type;
 
-std::string intros;
+//std::string intros;
 
-std::string vers_string(type role);
+//std::string vers_string(type role);
 
 double randomDoubleGenerator(double lower, double upper);
 

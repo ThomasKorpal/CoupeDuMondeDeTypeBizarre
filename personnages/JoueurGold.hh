@@ -6,7 +6,7 @@
 #include <time.h>
 #include "Joueur.hh"
 #include "participant.hh"
-#include "../Random/fonctions_random.hh"
+//#include "../Random/fonctions_random.hh"
 #include <cstdlib>
 
 class JoueurGold : public Joueur

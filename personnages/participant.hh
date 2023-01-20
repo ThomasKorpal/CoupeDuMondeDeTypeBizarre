@@ -4,7 +4,9 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-#include "../Random/fonctions_random.hh"
+//#include "../Random/fonctions_random.hh"
+
+typedef enum {JOUEUR,COACH, UNDEFINED} type;
 
 class participant
 {
@@ -18,8 +20,10 @@ public:
     participant();
     participant(participant& p);
     ~participant();
-    std::string getNom() const;
+    std::string getNom() const{return this->Nom;}
+    std::string getPays() const{return this->pays;}
     virtual void presentation();
+    std::string vers_string(type role);
 };
 
 #endif

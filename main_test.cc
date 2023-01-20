@@ -1,4 +1,4 @@
-#include "Equipe.hh"
+#include "match.hh"
 
 int main()
 {
@@ -6,4 +6,7 @@ int main()
     std::string pays="France";
     Equipe eq(pays,fichier);
     Equipe eq2("Japon",fichier);
+    match m(eq, eq2);
+    std::ifstream fi("Evenements/evenement_effet.csv");
+    evenement eent(1,fi);
 }

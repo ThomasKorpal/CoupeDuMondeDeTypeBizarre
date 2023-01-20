@@ -2,20 +2,11 @@
 
 
 match::match(){
-    /*this->probaEvent = randomDoubleGenerator((double)0,(double)1);
-    Equipe e1,e2;
-    this->tab_eq.push_back(e1);
-    this->tab_eq.push_back(e2);
-    this->matchPlayed = 0;*/
 }
 
 match::match(Equipe& eq1, Equipe& eq2)
 {
     this->probaEvent = randomDoubleGenerator((double)0,(double)1);
-   // Equipe e1(eq1);
-    //Equipe e2(eq2);
-    //this->tab_eq.push_back(eq1);
-    //this->tab_eq.push_back(eq2);
     this->tab_eq[0]=eq1;
     this->tab_eq[1]=eq2;
     this->matchPlayed = 0;

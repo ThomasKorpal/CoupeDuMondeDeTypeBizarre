@@ -1,5 +1,6 @@
 #include "fonctions_random.hh"
 
+/*
 std::string vers_string(type role)
 {
     std::string res;
@@ -17,6 +18,7 @@ std::string vers_string(type role)
     }
     return res;
 }
+*/
 
 double randomDoubleGenerator(double lower, double upper)
 {

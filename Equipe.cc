@@ -2,6 +2,7 @@
 
 Equipe::Equipe(){}
 
+/*
 Equipe::Equipe(Equipe& e){
     this->eq=e.eq;
     this->nom=e.getNom();
@@ -9,7 +10,7 @@ Equipe::Equipe(Equipe& e){
     Coach c(e.tb.getNom(), e.tb.getPays());
     this->tb=c;
 }
-
+*/
 Equipe::Equipe(std::string pays, std::ifstream& fichierPrenom)
 {
     std::string nom;

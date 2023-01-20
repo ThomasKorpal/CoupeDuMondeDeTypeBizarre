@@ -1,4 +1,4 @@
-Evenement,blessure Joueur,butMarqué,interventionDesDieux,maladieJoueur,typeEvent,isRandom
+Evenement,blessureJoueur,butMarqué,interventionDesDieux,maladieJoueur,typeEvent,isRandom
 Apparition d’une soucoupe d’alien au dessus du stade emportant l'équipe adverse momentanément,0,1,-1,0,BUT,0
 Blessure du gardien adverse qui se retrouve à terre,1,1,0,0,JOUEUR,0
 Apparition d’un chien qui mords un de vos joueurs,1,0,0,0,JOUEUR,0

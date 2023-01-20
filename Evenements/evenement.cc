@@ -1,28 +1,28 @@
-#include <iostream>
 #include "evenement.hh"
-#include <functional>
+
 
 evenement::evenement(){}
 
-evenement::evenement(int lieuEvent, std::fstream fichierEvent)
+evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
 {
-    int blessureJoueur, butMarqué, interventionDesDieux, maladieJoueur, isRandom;
-    std::string intitule,r1,r2;
-    typeEvent type;
-    char* reste;
-    char* event_effet_type;
-
+    //int blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, isRandom;
+    //std::string intitule,r1,r2;
+    //typeEvent type;
+    //char* reste;
+    //char* event_effet_type;
+    std::string event_effet_type;
     fichierEvent >> event_effet_type;
-    sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitule,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
+    
+    /*sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitule,&blessureJoueur,&butMarque,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
 
     if((lieuEvent==1 && type!=2) || (lieuEvent==2 && type==2)){
         while(this->event.first == "") //&& eventFound == 0)
             {
                 //fichierEvent >> event_effet_type;
-                //sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarqué,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
+                //sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarque,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
                 if(type!=2)
                 {
-                    this->event = std::make_pair(intitule,Effet(blessureJoueur,butMarqué,interventionDesDieux,maladieJoueur));
+                    this->event = std::make_pair(intitule,Effet(blessureJoueur,butMarque,interventionDesDieux,maladieJoueur));
                     this->type = type;
                     // eventFound = 1;
                     this->isRandom=isRandom;
@@ -34,7 +34,7 @@ evenement::evenement(int lieuEvent, std::fstream fichierEvent)
                     }
                 }
             }
-    }
+    }*/
 
 /*
     switch(lieuEvent)
@@ -97,12 +97,14 @@ Effet evenement::playEvenement()
             return this->event.second;
         case 1:
             std::cout << this->event.first << "\n" << std::endl;
-            for (int i = 0; i < this->options.size(); i++) 
+            for (size_t i = 0; i < this->options.size(); i++) 
             {
                 std::cout << i + 1 << ") " << options[i] << std::endl;
             }
             int choix;
             std::cin >> choix;
+            this->event.second.changementChoix(choix);
+            /*
             switch(choix)
             {
                 case 1: //Choix positif
@@ -113,11 +115,12 @@ Effet evenement::playEvenement()
                     break;
                 default:
                     break;
-            }
+            }*/
             return this->event.second;
         default:
             break;
     }
+    return this->event.second;
 }
 
 

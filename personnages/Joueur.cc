@@ -14,7 +14,7 @@ Joueur::Joueur():participant()
     this->potentiel = rand() % 101;
 }
 
-Joueur::Joueur(Joueur& j):participant(j.Nom,j.pays)
+Joueur::Joueur(const Joueur& j):participant(j.Nom,j.pays)
 {
     this->role = JOUEUR;
     this->connerie = (rand() % 101);
