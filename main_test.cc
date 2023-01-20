@@ -9,4 +9,5 @@ int main()
     match m(eq, eq2);
     std::ifstream fi("Evenements/evenement_effet.csv");
     evenement eent(1,fi);
+    std::cout << std::to_string(m.getMatchState()) << std::endl;
 }

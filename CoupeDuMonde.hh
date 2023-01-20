@@ -24,7 +24,7 @@ public:
     CoupeDuMonde();
  //   CoupeDuMonde(const CoupeDuMonde& c);
     ~CoupeDuMonde();
-    void playCDM(std::fstream f);
+    int playCDM(std::fstream f);
     void presentation();
 };
 

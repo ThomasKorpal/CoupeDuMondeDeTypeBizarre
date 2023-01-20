@@ -48,9 +48,41 @@ CoupeDuMonde::~CoupeDuMonde()
 {
 }
 
-void CoupeDuMonde::playCDM(std::fstream f)
+int CoupeDuMonde::playCDM(std::fstream f)
 {
-    
+    //std::cout de présentation
+    for(int i=0; i<3; i++)
+    {
+        match m(this->eqControlee,this->eqRencontree[i]);
+        this->nbPoints += m.play_match();
+    }
+    if(this->nbPoints <= 3)
+    {
+        std::cout << "Coup dur pour l'utilisateur du jeu français, sa coupe du monde s'arrête ici.." << std::endl;
+        return 0;
+    }
+    else if(this->nbPoints >= 4 && this->nbPoints < 6)
+    {
+        evenement eaf(2,f);
+        eaf.playEvenement();
+    }
+    match mf(this->eqControlee,this->eqRencontree[4]);
+    int final = mf.play_match();
+    switch(final)
+    {
+        case 3:
+            //Std::cout gg tu as gagné
+            break;
+        case 0:
+            //std::cout bon bah en fait personne a gagné, on a la flemme de continuer donc a dans 4 ans
+            break;
+        case -3:
+            //std::cout PTDR T NUL
+            break;
+        default:
+            break;
+    }
+    return 1;
 }
 
 void CoupeDuMonde::presentation()
