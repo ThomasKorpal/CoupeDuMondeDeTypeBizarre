@@ -15,7 +15,7 @@ private:
     double probaEvent;
     int matchPlayed; //0 si le match n'a pas encore été joué, 1 sinon
     //std::vector<Equipe> tab_eq;
-    Equipe tab_eq[2];
+    Equipe* tab_eq;
 public:
     match();
     match(Equipe& eq1, Equipe& eq2);

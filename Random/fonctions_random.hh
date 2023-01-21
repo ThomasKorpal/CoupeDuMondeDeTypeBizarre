@@ -18,7 +18,13 @@ double randomDoubleGenerator(double lower, double upper);
 
 void randomIntroGenerator(Equipe tab_eq[]);
 
-int interpreteEffet(Effet ef, int tabButs[2], Equipe eqs[]);
+int interpreteEffet(Effet ef, int tabButs[2], Equipe* eqs);
+
+void changementVal(Equipe* eqs, int val, int perte);
+
+void gainBut(int* tabButs, int val);
+
+void appelSup(int val);
 
 bool tabContient(int array[], int size, int number);
 

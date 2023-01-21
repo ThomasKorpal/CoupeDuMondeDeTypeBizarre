@@ -29,32 +29,31 @@ double randomDoubleGenerator(double lower, double upper)
 }
 
 void randomIntroGenerator(Equipe tab_eq[]){
-    
+
 }
 
-int interpreteEffet(Effet ef, int* tabButs, Equipe eqs[])
+
+void changementVal(Equipe* eqs, int val, int perte)
 {
-    int* tab = ef.getEffet();
-    switch(tab[0])
+    switch(val)
     {
         case 1:
-            eqs[0].setValeur(100);
-            break;
-        case 0:
+            eqs[0].setValeur(perte);
             break;
         case -1:
-            eqs[1].setValeur(100);
+            eqs[1].setValeur(perte);
             break;
         default:
             break;
     }
+}
 
-    switch(tab[1])
+void gainBut(int* tabButs, int val)
+{
+    switch(val)
     {
         case 1:
             tabButs[0]++;
-            break;
-        case 0:
             break;
         case -1:
             tabButs[1]++;
@@ -62,13 +61,14 @@ int interpreteEffet(Effet ef, int* tabButs, Equipe eqs[])
         default:
             break;
     }
+}
 
-    switch(tab[2])
+void appelSup(int val)
+{
+    switch(val)
     {
         case 1:
             printf("Les dieux du foot et de la pizza vous démontent");
-            break;
-        case 0:
             break;
         case -1:
             printf("Les dieux du foot et de la pizza vous bénissent et démontent l'autre équipe");
@@ -76,20 +76,17 @@ int interpreteEffet(Effet ef, int* tabButs, Equipe eqs[])
         default:
             break;
     }
+}
 
-    switch(tab[3])
-    {
-         case 1:
-            eqs[0].setValeur(50);
-            break;
-        case 0:
-            break;
-        case -1:
-            eqs[1].setValeur(50);
-            break;
-        default:
-            break;
-    }
+int interpreteEffet(Effet ef, int* tabButs, Equipe* eqs)
+{
+    int* tab = ef.getEffet();
+    changementVal(eqs, tab[0], 100);
+    gainBut(tabButs, tab[1]);
+    appelSup(tab[2]);
+    changementVal(eqs, tab[3], 50);
+
+    delete [] tab;    
     return 1;
 }
 

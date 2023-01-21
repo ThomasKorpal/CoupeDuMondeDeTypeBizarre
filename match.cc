@@ -7,6 +7,7 @@ match::match(){
 match::match(Equipe& eq1, Equipe& eq2)
 {
     this->probaEvent = randomDoubleGenerator((double)0,(double)1);
+    this->tab_eq=new Equipe[2];
     this->tab_eq[0]=eq1;
     this->tab_eq[1]=eq2;
     this->matchPlayed = 0;
@@ -14,6 +15,7 @@ match::match(Equipe& eq1, Equipe& eq2)
 
 match::~match()
 {
+    delete [] this->tab_eq;
 }
 
 int match::play_match()
