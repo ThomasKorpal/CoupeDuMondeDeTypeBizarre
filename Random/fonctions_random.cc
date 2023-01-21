@@ -28,7 +28,11 @@ double randomDoubleGenerator(double lower, double upper)
    return a_random_double;
 }
 
-int interpreteEffet(Effet ef, int* tabButs, std::vector<Equipe> eqs)
+void randomIntroGenerator(Equipe tab_eq[]){
+    
+}
+
+int interpreteEffet(Effet ef, int* tabButs, Equipe eqs[])
 {
     int* tab = ef.getEffet();
     switch(tab[0])

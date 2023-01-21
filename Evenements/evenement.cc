@@ -5,36 +5,34 @@ evenement::evenement(){}
 
 evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
 {
-    //int blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, isRandom;
+    std::string intitule, blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, type, isRandom;
     //std::string intitule,r1,r2;
-    //typeEvent type;
     //char* reste;
-    //char* event_effet_type;
-    std::string event_effet_type;
-    fichierEvent >> event_effet_type;
-    
-    /*sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitule,&blessureJoueur,&butMarque,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
 
-    if((lieuEvent==1 && type!=2) || (lieuEvent==2 && type==2)){
-        while(this->event.first == "") //&& eventFound == 0)
+    while(this->event.first == ""){
+        std::getline(fichierEvent, intitule, ',');
+        std::getline(fichierEvent, blessureJoueur, ',');
+        std::getline(fichierEvent, butMarque, ',');
+        std::getline(fichierEvent, interventionDesDieux, ',');
+        std::getline(fichierEvent, maladieJoueur, ',');
+        std::getline(fichierEvent, type, ',');
+        std::getline(fichierEvent, isRandom);
+        //std::cout<< intitule<<" "<<blessureJoueur<<" "<<butMarque<<" "<<interventionDesDieux<<" "<<maladieJoueur<<" "<<type<<" "<<isRandom<<std::endl;
+
+        if((lieuEvent==1 && type=="BUT") || (lieuEvent==2 && type=="JOUEUR")){
+            this->event = std::make_pair(intitule,Effet(std::stoi(blessureJoueur),std::stoi(butMarque),std::stoi(interventionDesDieux),std::stoi(maladieJoueur)));
+            this->type = this->vers_type(type);
+            this->isRandom=std::stoi(isRandom);
+            std::cout<<"j'ai pas compris le code en bas donc j'ai mis en com : evenement.cc"<<std::endl;
+            /*
+            if(this->isRandom)
             {
-                //fichierEvent >> event_effet_type;
-                //sscanf(event_effet_type,"%s,%d,%d,%d,%d,%d,%d,%s",intitulé,&blessureJoueur,&butMarque,&interventionDesDieux,&maladieJoueur,&type,&isRandom,reste);
-                if(type!=2)
-                {
-                    this->event = std::make_pair(intitule,Effet(blessureJoueur,butMarque,interventionDesDieux,maladieJoueur));
-                    this->type = type;
-                    // eventFound = 1;
-                    this->isRandom=isRandom;
-                    if(this->isRandom)
-                    {
-                        sscanf(reste,"%s,%s",r1,r2);
-                        this->options.push_back(r1);
-                        this->options.push_back(r2);
-                    }
-                }
-            }
-    }*/
+                sscanf(reste,"%s,%s",r1,r2);
+                this->options.push_back(r1);
+                this->options.push_back(r2);
+            }*/
+        }
+    }
 
 /*
     switch(lieuEvent)
@@ -126,5 +124,13 @@ Effet evenement::playEvenement()
 
 void evenement::stockEvent(std::fstream fichierEvent)
 {
+    std::cout<<"A completer : evenement"<<std::endl;
+}
 
+typeEvent evenement::vers_type(std::string t){
+    if(t=="JOUEUR"){
+        return TJOUEUR;
+    }else{
+        return TBUT;
+    }
 }

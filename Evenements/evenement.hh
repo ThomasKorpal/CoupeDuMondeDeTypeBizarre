@@ -10,7 +10,7 @@
 
 #define NEVENTS 8
 
-typedef enum {TBUT,TJOUEUR,TEQUIPE} typeEvent;
+typedef enum {TBUT,TJOUEUR} typeEvent;
 
 class evenement
 {
@@ -25,6 +25,7 @@ class evenement
         ~evenement();
         Effet playEvenement();
         void stockEvent(std::fstream fichierEvent);
+        typeEvent vers_type(std::string t);
 };
 
 #endif

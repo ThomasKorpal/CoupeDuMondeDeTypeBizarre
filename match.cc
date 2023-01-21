@@ -15,11 +15,12 @@ match::match(Equipe& eq1, Equipe& eq2)
 match::~match()
 {
 }
-/*
+
 int match::play_match()
 {
     int buts[2];
     randomIntroGenerator(this->tab_eq);
+    std::cout<<"fonction pas implemente dans fonctions radom : match.cc"<<std::endl;
     for(int i=0; i<2; i++)
     {
         if(!i)
@@ -36,7 +37,7 @@ int match::play_match()
             
             if(randDou<=this->probaEvent)
             {
-                std::cout<<"Mis les valerus au pif : match.cc" <<std::endl;
+                std::cout<<"Mis les valeurs au pif pour event: match.cc" <<std::endl;
                 std::ifstream fichier("evenement_effet.csv");
                 evenement event(1,fichier);
                 Effet ef = event.playEvenement();
@@ -47,7 +48,8 @@ int match::play_match()
     }
     this->matchPlayed = 1;
     if(buts[0] > buts[1]){return 3;}
-    if(buts[0] == buts[1]){return 0;}
+    //if(buts[0] == buts[1]){return 0;}
     if(buts[0] < buts[1]){return -3;}
+
+    return 0; //le compilateur n'aime pas qu'on mets pas un return "global"
 }
-*/

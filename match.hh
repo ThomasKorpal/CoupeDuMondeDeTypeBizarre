@@ -20,7 +20,7 @@ public:
     match();
     match(Equipe& eq1, Equipe& eq2);
     ~match();
-    //int play_match();
+    int play_match();
     int getScore(){return this->score;};
     int getMatchState(){return this->matchPlayed;};
 };

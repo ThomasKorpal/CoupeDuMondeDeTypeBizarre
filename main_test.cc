@@ -8,6 +8,8 @@ int main()
     Equipe eq2("Japon",fichier);
     match m(eq, eq2);
     std::ifstream fi("Evenements/evenement_effet.csv");
+    std::string poub;
+    fi>>poub;
     evenement eent(1,fi);
     std::cout << std::to_string(m.getMatchState()) << std::endl;
 }

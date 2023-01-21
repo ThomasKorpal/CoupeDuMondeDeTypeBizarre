@@ -16,9 +16,9 @@
 
 double randomDoubleGenerator(double lower, double upper);
 
-void randomIntroGenerator(std::vector<Equipe> tab_eq);
+void randomIntroGenerator(Equipe tab_eq[]);
 
-int interpreteEffet(Effet ef, int tabButs[2], std::vector<Equipe> eqs);
+int interpreteEffet(Effet ef, int tabButs[2], Equipe eqs[]);
 
 bool tabContient(int array[], int size, int number);
 

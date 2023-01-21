@@ -18,9 +18,9 @@ Effet::~Effet(){}
 
 void Effet::changementChoix(int choix)
 {
+    std::cout<<"a completer : effet"<<std::endl;
     switch(choix)
     {
-        
     }
 }
 
