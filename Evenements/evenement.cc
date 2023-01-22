@@ -5,7 +5,7 @@ evenement::evenement(){}
 
 evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
 {
-    std::string intitule, blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, type, isRandom, reste;
+    std::string intitule, blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, type, isRandom, r1, r2;
 
     while(this->event.first == ""){
         std::getline(fichierEvent, intitule, ',');
@@ -15,7 +15,7 @@ evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
         std::getline(fichierEvent, maladieJoueur, ',');
         std::getline(fichierEvent, type, ',');
         std::getline(fichierEvent, isRandom, ',');
-        std::getline(fichierEvent, reste, ',');
+
         //std::cout<< intitule<<" "<<blessureJoueur<<" "<<butMarque<<" "<<interventionDesDieux<<" "<<maladieJoueur<<" "<<type<<" "<<isRandom<<std::endl;
 
         if((lieuEvent==1 && type=="BUT") || (lieuEvent==2 && type=="JOUEUR")){
@@ -24,7 +24,8 @@ evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
             this->isRandom=std::stoi(isRandom);
             if(this->isRandom)
             {
-                sscanf(reste,"%s,%s",r1,r2);
+                std::getline(fichierEvent, r1, ',');
+                std::getline(fichierEvent, r2);
                 this->options.push_back(r1);
                 this->options.push_back(r2);
             }

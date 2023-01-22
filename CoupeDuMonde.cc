@@ -22,6 +22,8 @@ CoupeDuMonde::CoupeDuMonde()
     Equipe equi(pays,fichier);
     this->eqControlee = equi;
 
+    this->eqRencontree=new Equipe[4];
+/*
     int tab[4];
     while(this->eqRencontree.size() != 4)
     {
@@ -32,7 +34,7 @@ CoupeDuMonde::CoupeDuMonde()
             this->eqRencontree.push_back(eq);
             this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
         }
-    }
+    }*/
     this->nbPoints = 0;
 }
 
@@ -40,10 +42,10 @@ CoupeDuMonde::~CoupeDuMonde()
 {
 }
 
-int CoupeDuMonde::playCDM(std::fstream f)
+int CoupeDuMonde::playCDM(std::ifstream f)
 {
     std::cout << "Bonjour et bienvenue dans cette coupe du monde !" << std::endl;
-    std::cout << "Sans plus attendre, passons au premier match !" << std::endl
+    std::cout << "Sans plus attendre, passons au premier match !" << std::endl;
     for(int i=0; i<3; i++)
     {
         match m(this->eqControlee,this->eqRencontree[i]);

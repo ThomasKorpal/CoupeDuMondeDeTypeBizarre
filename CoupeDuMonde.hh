@@ -18,12 +18,12 @@ class CoupeDuMonde
 {
 private:
     Equipe eqControlee;
-    std::vector<Equipe> eqRencontree;
+    Equipe* eqRencontree;
     int nbPoints;
 public:
     CoupeDuMonde();
     ~CoupeDuMonde();
-    int playCDM(std::fstream f);
+    int playCDM(std::ifstream f);
     void presentation();
 };
 

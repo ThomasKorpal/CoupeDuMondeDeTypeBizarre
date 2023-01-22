@@ -32,6 +32,5 @@ int* Effet::getEffet()
     tab[1]=this->butMarque;
     tab[2]=this->interventionDesDieux;
     tab[3]=this->maladieJoueur;
-    std::cout<<"Pas oublier de désallouer" << std::endl;
     return tab;
 }
