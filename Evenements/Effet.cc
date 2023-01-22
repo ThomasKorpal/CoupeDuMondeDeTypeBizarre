@@ -21,6 +21,14 @@ void Effet::changementChoix(int choix)
     std::cout<<"a completer : effet"<<std::endl;
     switch(choix)
     {
+        case 1:
+            //choix positif
+            int tirage = rand()%4;
+            
+            this->
+            break;
+        case 2:
+            break;
     }
 }
 
