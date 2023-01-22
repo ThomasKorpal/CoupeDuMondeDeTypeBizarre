@@ -23,6 +23,14 @@ CoupeDuMonde::CoupeDuMonde()
     this->eqControlee = equi;
 
     this->eqRencontree=new Equipe[4];
+    while(i<4){
+        int tirage=rand()%18;
+        if(tab_pays[tirage]!=this->eqControlee.getNom()){
+            Equipe eq(tab_pays[tirage],fichier);
+            tab[i]=eq;
+            i++;
+        }
+    }
 /*
     int tab[4];
     while(this->eqRencontree.size() != 4)
@@ -32,7 +40,7 @@ CoupeDuMonde::CoupeDuMonde()
         {
             Equipe eq(tab_pays[tirage],fichier);
             this->eqRencontree.push_back(eq);
-            this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
+            //this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
         }
     }*/
     this->nbPoints = 0;
