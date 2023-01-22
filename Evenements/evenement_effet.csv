@@ -11,7 +11,7 @@ Suite à l'invocation du public un dragon apparait et fait fuir l'équipe advers
 Après avoir mangé au CROUS votre joueur est tombé malade,0,0,0,1,JOUEUR,0,,
 Une de vos fans a envoyé un repas empoisonné à votre adeversaire,0,0,0,-1,JOUEUR,0,,
 Un de vos joueurs s'est trompé de but,0,-1,0,0,BUT,,,
-La fée clochette apparait et vous aveugle,1,0,1,0,JOUEUR,,,,
+La fée clochette apparait et vous aveugle,1,0,1,0,JOUEUR,,,
 Suite un prank de la part de son coéquipier un joueur adverse se retrouve avec une diarhée,0,0,0,-1,JOUEUR,,,
 Un de vos joueurs a été punie par sa mère et n'a pas pu venir,0,0,0,1,JOUEUR,,,
 Un joueur adverse a perdu ses chaussures et a reçue une écharde,1,0,0,0,JOUEUR,
