@@ -5,9 +5,7 @@ evenement::evenement(){}
 
 evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
 {
-    std::string intitule, blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, type, isRandom;
-    //std::string intitule,r1,r2;
-    //char* reste;
+    std::string intitule, blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, type, isRandom, reste;
 
     while(this->event.first == ""){
         std::getline(fichierEvent, intitule, ',');
@@ -16,21 +14,20 @@ evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
         std::getline(fichierEvent, interventionDesDieux, ',');
         std::getline(fichierEvent, maladieJoueur, ',');
         std::getline(fichierEvent, type, ',');
-        std::getline(fichierEvent, isRandom);
+        std::getline(fichierEvent, isRandom, ',');
+        std::getline(fichierEvent, reste, ',');
         //std::cout<< intitule<<" "<<blessureJoueur<<" "<<butMarque<<" "<<interventionDesDieux<<" "<<maladieJoueur<<" "<<type<<" "<<isRandom<<std::endl;
 
         if((lieuEvent==1 && type=="BUT") || (lieuEvent==2 && type=="JOUEUR")){
             this->event = std::make_pair(intitule,Effet(std::stoi(blessureJoueur),std::stoi(butMarque),std::stoi(interventionDesDieux),std::stoi(maladieJoueur)));
             this->type = this->vers_type(type);
             this->isRandom=std::stoi(isRandom);
-            std::cout<<"j'ai pas compris le code en bas donc j'ai mis en com : evenement.cc"<<std::endl;
-            /*
             if(this->isRandom)
             {
                 sscanf(reste,"%s,%s",r1,r2);
                 this->options.push_back(r1);
                 this->options.push_back(r2);
-            }*/
+            }
         }
     }
 
@@ -119,12 +116,6 @@ Effet evenement::playEvenement()
             break;
     }
     return this->event.second;
-}
-
-
-void evenement::stockEvent(std::fstream fichierEvent)
-{
-    std::cout<<"A completer : evenement"<<std::endl;
 }
 
 typeEvent evenement::vers_type(std::string t){

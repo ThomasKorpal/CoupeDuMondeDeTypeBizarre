@@ -24,7 +24,6 @@ class evenement
         evenement(int lieuEvent, std::ifstream& fichierEvent); //int lieuEvent pour dire si c'est un evenement dans un match ou entre deux matchs
         ~evenement();
         Effet playEvenement();
-        void stockEvent(std::fstream fichierEvent);
         typeEvent vers_type(std::string t);
 };
 

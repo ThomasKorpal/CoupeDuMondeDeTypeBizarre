@@ -21,8 +21,8 @@ match::~match()
 int match::play_match()
 {
     int buts[2];
-    randomIntroGenerator(this->tab_eq);
-    std::cout<<"fonction pas implemente dans fonctions radom : match.cc"<<std::endl;
+    std::cout << "Bonjour et bienvenue dans ce match qui opposera " << this->tab_eq[0].getNom() << " et " << this->tab_eq[1].getNom() << " ! " << std::endl;
+    std::cout << "N'attendons pas plus !" << std::endl;
     for(int i=0; i<2; i++)
     {
         if(!i)

@@ -28,29 +28,22 @@ CoupeDuMonde::CoupeDuMonde()
         int tirage=rand()%18;
         if(!(tabContient(tab,4,tirage)) && tab_pays[tirage] != this->eqControlee.getNom())
         {
-            //Equipe eq(tab_pays[tirage],fichier);
-            //this->eqRencontree.push_back(eq);
-            //this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
+            Equipe eq(tab_pays[tirage],fichier);
+            this->eqRencontree.push_back(eq);
+            this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
         }
-
     }
     this->nbPoints = 0;
 }
-/*
-CoupeDuMonde::CoupeDuMonde(const CoupeDuMonde& c)
-{
-//    this->eqControlee = c.eqControlee;
-//    this->eqRencontree = c.eqRencontree;
-    this->nbPoints = c.nbPoints;
-}
-*/
+
 CoupeDuMonde::~CoupeDuMonde()
 {
 }
 
 int CoupeDuMonde::playCDM(std::fstream f)
 {
-    //std::cout de présentation
+    std::cout << "Bonjour et bienvenue dans cette coupe du monde !" << std::endl;
+    std::cout << "Sans plus attendre, passons au premier match !" << std::endl
     for(int i=0; i<3; i++)
     {
         match m(this->eqControlee,this->eqRencontree[i]);
@@ -71,13 +64,13 @@ int CoupeDuMonde::playCDM(std::fstream f)
     switch(final)
     {
         case 3:
-            //Std::cout gg tu as gagné
+            std::cout << "C'est une victoire triomphale ! Grand bravo a vous !" << std::endl;
             break;
         case 0:
-            //std::cout bon bah en fait personne a gagné, on a la flemme de continuer donc a dans 4 ans
+            std::cout << "L'arbitre ayant un TGV a Gare du Nord dans 30 min, le match s'arrête sans vainqueur." << std::endl;
             break;
         case -3:
-            //std::cout PTDR T NUL
+            std::cout << "Ah bah c'est la loose, en finale en plus c'est chaud..." << std::endl;
             break;
         default:
             break;

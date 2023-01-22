@@ -22,7 +22,6 @@ private:
     int nbPoints;
 public:
     CoupeDuMonde();
- //   CoupeDuMonde(const CoupeDuMonde& c);
     ~CoupeDuMonde();
     int playCDM(std::fstream f);
     void presentation();
