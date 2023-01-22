@@ -16,7 +16,7 @@ evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
         std::getline(fichierEvent, type, ',');
         std::getline(fichierEvent, isRandom, ',');
 
-        //std::cout<< intitule<<" "<<blessureJoueur<<" "<<butMarque<<" "<<interventionDesDieux<<" "<<maladieJoueur<<" "<<type<<" "<<isRandom<<std::endl;
+        std::cout<< intitule<<" "<<blessureJoueur<<" "<<butMarque<<" "<<interventionDesDieux<<" "<<maladieJoueur<<" "<<type<<" "<<isRandom<<std::endl;
 
         if((lieuEvent==1 && type=="BUT") || (lieuEvent==2 && type=="JOUEUR")){
             this->event = std::make_pair(intitule,Effet(std::stoi(blessureJoueur),std::stoi(butMarque),std::stoi(interventionDesDieux),std::stoi(maladieJoueur)));
