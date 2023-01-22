@@ -23,12 +23,20 @@ CoupeDuMonde::CoupeDuMonde()
     this->eqControlee = equi;
 
     this->eqRencontree=new Equipe[4];
-    while(i<4){
+    int it = 0;
+    while(it<4){
         int tirage=rand()%18;
-        if(tab_pays[tirage]!=this->eqControlee.getNom()){
+        int test = 0;
+        for(int j=0; j<4; j++)
+        {
+            if("Equipe de " + tab_pays[tirage] == this->eqControlee[j].getNom()){
+                test = 1;
+            }
+        }
+        if(!test){
             Equipe eq(tab_pays[tirage],fichier);
-            tab[i]=eq;
-            i++;
+            tab[it]=eq;
+            it++;
         }
     }
 /*
