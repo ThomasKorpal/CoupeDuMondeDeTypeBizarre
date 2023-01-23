@@ -7,11 +7,12 @@ Effet::Effet(){
     this->maladieJoueur=0;
 };
 
-Effet::Effet(int a, int b, int c, int d){
+Effet::Effet(int a, int b, int c, int d, typeEvent type){
     this->blessureJoueur=a;
     this->butMarque=b;
     this->interventionDesDieux=c;
     this->maladieJoueur=d;
+    this->type = type;
 }
 
 Effet::~Effet(){}
@@ -19,15 +20,86 @@ Effet::~Effet(){}
 void Effet::changementChoix(int choix)
 {
     std::cout<<"a completer : effet"<<std::endl;
-    switch(choix)
+    switch(this->type)
     {
-        case 1:
-            //choix positif
-            int tirage = rand()%4;
-            
-            this->
+        case TBUT:
+            switch(choix)
+            {
+                case 1:
+                    int proba = randomDoubleGenerator(0,1);
+                    if(proba >= 0.5)
+                    {
+                        this->butMarque = -1;
+                        std::cout << "La chance n'est pas en votre faveur à ce que je vois..." << std::endl;
+                    }
+                    else
+                    {
+                        this->butMarque -=1;
+                        if(this->butMarque < -1)
+                            this->butMarque = -1;
+                        std::cout << "Quelle chance !" << std::endl;
+                    }
+                    break;
+                case 2:
+                    std::cout << "Rien ne s'est donc passé" << std::endl;
+                    break;
+                default:
+                    break;
+            }
             break;
-        case 2:
+        case TJOUEUR:
+            switch(choix)
+            {
+                case 1:
+                    int proba = randomDoubleGenerator(0,1);
+                    if(proba >= 0.75)
+                    {
+                        this->blessureJoueur = 1;
+                        this->maladieJoueur = 1;
+                        std::cout << "La chance n'est pas en votre faveur à ce que je vois..." << std::endl;
+                    }
+                    else
+                    {
+                        this->blessureJoueur -=1;
+                        if(this->blessureJoueur < -1)
+                            this->blessureJoueur = -1;
+                        std::cout << "Quelle chance !" << std::endl;
+                    }
+                    break;
+                case 2:
+                    std::cout << "Rien ne s'est donc passé" << std::endl;
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case TEQUIPE:
+            switch(choix)
+            {
+                case 1:
+                    int proba = randomDoubleGenerator(0,1);
+                    if(proba >= 0.75)
+                    {
+                        this->blessureJoueur = 1;
+                        this->maladieJoueur = 1;
+                        std::cout << "La chance n'est pas en votre faveur à ce que je vois..." << std::endl;
+                    }
+                    else
+                    {
+                        this->blessureJoueur -=1;
+                        if(this->blessureJoueur < -1)
+                            this->blessureJoueur = -1;
+                        std::cout << "Quelle chance !" << std::endl;
+                    }
+                    break;
+                case 2:
+                    std::cout << "Rien ne s'est donc passé" << std::endl;
+                    break;
+                default:
+                    break;
+            }
+            break;
+        default:
             break;
     }
 }

@@ -2,6 +2,8 @@
 #define __EFFET_HH__
 
 #include <iostream>
+#include "../Random/fonctions_random.hh"
+typedef enum {TBUT,TJOUEUR, TEQUIPE} typeEvent;
 
 class Effet
 {
@@ -11,10 +13,11 @@ class Effet
         int blessureJoueur;
         int butMarque;
         int interventionDesDieux;
-        int maladieJoueur; 
+        int maladieJoueur;
+        typeEvent type; 
     public:
         Effet();
-        Effet(int a, int b, int c, int d);
+        Effet(int a, int b, int c, int d, typeEvent type);
         ~Effet();
         void changementChoix(int choix);
         int* getEffet();

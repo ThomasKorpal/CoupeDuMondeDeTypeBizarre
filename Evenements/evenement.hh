@@ -10,8 +10,6 @@
 
 #define NEVENTS 8
 
-typedef enum {TBUT,TJOUEUR, TEQUIPE} typeEvent;
-
 class evenement
 {
     private:
