@@ -29,13 +29,13 @@ CoupeDuMonde::CoupeDuMonde()
         int test = 0;
         for(int j=0; j<4; j++)
         {
-            if("Equipe de " + tab_pays[tirage] == this->eqControlee[j].getNom()){
+            if("Equipe de " + tab_pays[tirage] == this->eqRencontree[j].getNom()){
                 test = 1;
             }
         }
         if(!test){
             Equipe eq(tab_pays[tirage],fichier);
-            tab[it]=eq;
+            this->eqRencontree[it]=eq;
             it++;
         }
     }

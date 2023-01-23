@@ -122,7 +122,9 @@ Effet evenement::playEvenement()
 typeEvent evenement::vers_type(std::string t){
     if(t=="JOUEUR"){
         return TJOUEUR;
-    }else{
+    }else if(t==BUT){
         return TBUT;
+    }else{
+        return TEQUIPE;
     }
 }
