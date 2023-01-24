@@ -12,7 +12,7 @@
 #include "personnages/JoueurGold.hh"
 #include "Evenements/evenement.hh"
 
-std::string tab_pays[20]={"FRANCE","ESPAGNE","ANGLETERRE","COREE","ITALIE","GRECE","ALLEMAGNE","MEXIQUE","JAPON","ARGENTINE","BELGIQUE","CROATIE","MAROC","PORTUGAL","LIBAN","PAYS-BAS","EGYPTE","ALGERIE","CHINE"};
+//std::string tab_pays[20]={"FRANCE","ESPAGNE","ANGLETERRE","COREE","ITALIE","GRECE","ALLEMAGNE","MEXIQUE","JAPON","ARGENTINE","BELGIQUE","CROATIE","MAROC","PORTUGAL","LIBAN","PAYS-BAS","EGYPTE","ALGERIE","CHINE"};
 
 class CoupeDuMonde
 {
@@ -23,7 +23,7 @@ private:
 public:
     CoupeDuMonde();
     ~CoupeDuMonde();
-    int playCDM(std::ifstream f);
+    int playCDM(std::ifstream& f);
     void presentation();
 };
 

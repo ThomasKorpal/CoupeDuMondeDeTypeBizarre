@@ -1,5 +1,8 @@
 #include "CoupeDuMonde.hh"
 
+
+std::string tab_pays[20]={"FRANCE","ESPAGNE","ANGLETERRE","COREE","ITALIE","GRECE","ALLEMAGNE","MEXIQUE","JAPON","ARGENTINE","BELGIQUE","CROATIE","MAROC","PORTUGAL","LIBAN","PAYS-BAS","EGYPTE","ALGERIE","CHINE"};
+
 CoupeDuMonde::CoupeDuMonde()
 {
     //Choix de l'équipe de l'utilisateur
@@ -58,14 +61,15 @@ CoupeDuMonde::~CoupeDuMonde()
 {
 }
 
-int CoupeDuMonde::playCDM(std::ifstream f)
+int CoupeDuMonde::playCDM(std::ifstream& f)
 {
     std::cout << "Bonjour et bienvenue dans cette coupe du monde !" << std::endl;
     std::cout << "Sans plus attendre, passons au premier match !" << std::endl;
+    
     for(int i=0; i<3; i++)
     {
         match m(this->eqControlee,this->eqRencontree[i]);
-        this->nbPoints += m.play_match();
+        this->nbPoints += m.play_match(f);
     }
     if(this->nbPoints <= 3)
     {
@@ -78,7 +82,7 @@ int CoupeDuMonde::playCDM(std::ifstream f)
         eaf.playEvenement();
     }
     match mf(this->eqControlee,this->eqRencontree[4]);
-    int final = mf.play_match();
+    int final = mf.play_match(f);
     switch(final)
     {
         case 3:
@@ -98,10 +102,11 @@ int CoupeDuMonde::playCDM(std::ifstream f)
 
 void CoupeDuMonde::presentation()
 {
+    std::cout<<"Les équipes de cette coupe :"<<std::endl;
     std::cout << this->eqControlee.getNom() << "\n" << std::endl;
     for(int i=0; i<4; i++)
     {
         std::cout << this->eqRencontree[i].getNom() << "\n" << std::endl;
     }
-    std::cout << std::to_string(this->nbPoints) << std::endl;
+    std::cout << "Nombre de points astuelle de votre équipe : " <<std::to_string(this->nbPoints) << std::endl;
 }

@@ -78,6 +78,7 @@ void appelSup(int val)
     }
 }
 
+/*
 int interpreteEffet(Effet ef, int* tabButs, Equipe* eqs)
 {
     int* tab = ef.getEffet();
@@ -89,6 +90,7 @@ int interpreteEffet(Effet ef, int* tabButs, Equipe* eqs)
     delete [] tab;    
     return 1;
 }
+*/
 
 bool tabContient(int array[], int size, int number) 
 {

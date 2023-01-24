@@ -6,7 +6,7 @@
 #include <random>
 #include <vector>
 #include "../Equipe.hh"
-#include "../Evenements/evenement.hh"
+//#include "../Evenements/evenement.hh"
 
 //typedef enum {JOUEUR,COACH, UNDEFINED} type;
 
@@ -18,7 +18,7 @@ double randomDoubleGenerator(double lower, double upper);
 
 void randomIntroGenerator(Equipe tab_eq[]);
 
-int interpreteEffet(Effet ef, int tabButs[2], Equipe* eqs);
+//int interpreteEffet(Effet ef, int tabButs[2], Equipe* eqs);
 
 void changementVal(Equipe* eqs, int val, int perte);
 

@@ -19,14 +19,14 @@ Effet::~Effet(){}
 
 void Effet::changementChoix(int choix)
 {
-    std::cout<<"a completer : effet"<<std::endl;
+    int proba;
     switch(this->type)
     {
         case TBUT:
             switch(choix)
             {
                 case 1:
-                    int proba = randomDoubleGenerator(0,1);
+                    proba = randomDoubleGenerator(0,1);
                     if(proba >= 0.5)
                     {
                         this->butMarque = -1;
@@ -51,7 +51,7 @@ void Effet::changementChoix(int choix)
             switch(choix)
             {
                 case 1:
-                    int proba = randomDoubleGenerator(0,1);
+                    proba = randomDoubleGenerator(0,1);
                     if(proba >= 0.75)
                     {
                         this->blessureJoueur = 1;
@@ -77,7 +77,7 @@ void Effet::changementChoix(int choix)
             switch(choix)
             {
                 case 1:
-                    int proba = randomDoubleGenerator(0,1);
+                    proba = randomDoubleGenerator(0,1);
                     if(proba >= 0.75)
                     {
                         this->blessureJoueur = 1;

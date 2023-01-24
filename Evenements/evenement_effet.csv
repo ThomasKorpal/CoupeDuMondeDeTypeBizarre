@@ -11,7 +11,7 @@ Suite un hot dog un joueur de votre équipe se retrouve à terre et aux toilette
 Votre gardien trop concentré sur son téléphone,0,-1,0,0,BUT,0,,
 Suite à l'invocation du public un dragon apparaît et fait fuir l'équipe adverse,0,1,1,0,BUT,0,,
 Après avoir mangé au CROUS votre joueur est tombé malade,0,0,0,1,JOUEUR,1,Tenter de lui donner des médicaments contre les maux d’estomac mais s’il ne se rétablit pas les dégâts sont doublés,Sinon remplacer le mais le niveau de l’équipe va diminuer
-Une de vos fans a envoyé un repas empoisonné à votre adversaire,0,0,0,-1,JOUEUR,1,,
+Une de vos fans a envoyé un repas empoisonné à votre adversaire,0,0,0,-1,JOUEUR,1,Voulez vous rajouter une boisson pour pimenter un peu plus au risque d’être pris sur le fait,Ou pensez vous que le repas est suffisant
 Un de vos joueurs s'est trompé de but,0,-1,0,0,BUT,0,,
 La fée clochette apparaît et vous aveugle,1,0,1,0,JOUEUR,1,Tenter de trouver un esquive en cas d’échec vous devez payer le prix double,Sinon laisser votre joueur être éblouie
 Suite un prank de la part de son coéquipier un joueur adverse se retrouve avec une diarrhée,0,0,0,-1,JOUEUR,0,,

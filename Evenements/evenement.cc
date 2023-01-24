@@ -15,17 +15,19 @@ evenement::evenement(int lieuEvent, std::ifstream& fichierEvent)
         std::getline(fichierEvent, maladieJoueur, ',');
         std::getline(fichierEvent, type, ',');
         std::getline(fichierEvent, isRandom, ',');
+        std::getline(fichierEvent, r1, ',');
+        std::getline(fichierEvent, r2);
 
-        std::cout<< intitule<<" "<<blessureJoueur<<" "<<butMarque<<" "<<interventionDesDieux<<" "<<maladieJoueur<<" "<<type<<" "<<isRandom<<std::endl;
+        //std::cout<< intitule<<" "<<blessureJoueur<<" "<<butMarque<<" "<<interventionDesDieux<<" "<<maladieJoueur<<" "<<type<<" "<<isRandom<<std::endl;
 
-        if((lieuEvent==1 && type=="BUT") || (lieuEvent==2 && type=="JOUEUR")){
-            this->event = std::make_pair(intitule,Effet(std::stoi(blessureJoueur),std::stoi(butMarque),std::stoi(interventionDesDieux),std::stoi(maladieJoueur)));
+        if((lieuEvent==1 && (type=="BUT" || type=="JOUEUR")) || (lieuEvent==2 && type=="EQUIPE")){
+            this->event = std::make_pair(intitule,Effet(std::stoi(blessureJoueur),std::stoi(butMarque),std::stoi(interventionDesDieux),std::stoi(maladieJoueur), this->vers_type(type)));
             this->type = this->vers_type(type);
             this->isRandom=std::stoi(isRandom);
             if(this->isRandom)
             {
-                std::getline(fichierEvent, r1, ',');
-                std::getline(fichierEvent, r2);
+                //std::getline(fichierEvent, r1, ',');
+                //std::getline(fichierEvent, r2);
                 this->options.push_back(r1);
                 this->options.push_back(r2);
             }
