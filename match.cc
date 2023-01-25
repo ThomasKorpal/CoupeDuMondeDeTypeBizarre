@@ -21,24 +21,25 @@ match::~match()
 
 int match::interpreteEffet(Effet ef, int* tabButs, Equipe* eqs)
 {
-    int* tab = ef.getEffet();
-    changementVal(eqs, tab[0], 100);
-    gainBut(tabButs, tab[1]);
-    appelSup(tab[2]);
-    changementVal(eqs, tab[3], 50);
+    changementVal(eqs, ef[0], 100);
+    gainBut(tabButs, ef[1]);
+    appelSup(ef[2]);
+    changementVal(eqs, ef[3], 50);
 
-    delete [] tab;    
     return 1;
 }
 
 
 
 
-int match::play_match(std::ifstream& f)
+int match::play_match()
 {
     int buts[2]={0,0};
     std::cout << "Bonjour et bienvenue dans ce match qui opposera " << this->tab_eq[0].getNom() << " et " << this->tab_eq[1].getNom() << " ! " << std::endl;
     std::cout << "N'attendons pas plus !" << std::endl;
+
+    evenement event(1);
+
     for(int i=0; i<2; i++)
     {
         if(!i)
@@ -52,11 +53,8 @@ int match::play_match(std::ifstream& f)
         for(int j=0; j<7; j++)
         {
             double randDou = randomDoubleGenerator(0,1);
-            
             if(randDou<=this->probaEvent)
             {
-                //std::cout<<"Mis les valeurs au pif pour event: match.cc" <<std::endl;
-                evenement event(1,f);
                 Effet ef = event.playEvenement();
                 interpreteEffet(ef,buts,this->tab_eq);
             }

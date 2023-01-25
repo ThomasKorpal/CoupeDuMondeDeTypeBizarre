@@ -7,12 +7,10 @@ CoupeDuMonde::CoupeDuMonde()
 {
     //Choix de l'équipe de l'utilisateur
     std::string pays;
+    srand(time(NULL));
     for(int i=0; i<6; i++)
     {
         std::cout << std::to_string((3*i)+1) << ") " << tab_pays[3*i] << "        " << std::to_string((3*i)+2) << ") " << tab_pays[(3*i)+1] << "        " << std::to_string((3*i)+3) << ") " << tab_pays[(3*i)+2] << std::endl;
-        //printf("%d) %s",(3*i)+1,tab_pays[3*i]);
-        //printf("%d) %s",(3*i)+2,tab_pays[(3*i)+1]);
-        //printf("%d) %s\n\n",(3*i)+3,tab_pays[(3*i)+2]);
     }
     std::cout<<"Choisissez l'équipe que vous souhaitez contrôler : " << std::endl;
     int choix = -1;
@@ -42,34 +40,25 @@ CoupeDuMonde::CoupeDuMonde()
             it++;
         }
     }
-/*
-    int tab[4];
-    while(this->eqRencontree.size() != 4)
-    {
-        int tirage=rand()%18;
-        if(!(tabContient(tab,4,tirage)) && tab_pays[tirage] != this->eqControlee.getNom())
-        {
-            Equipe eq(tab_pays[tirage],fichier);
-            this->eqRencontree.push_back(eq);
-            //this->eqRencontree.push_back(Equipe(tab_pays[tirage],fichier));
-        }
-    }*/
     this->nbPoints = 0;
 }
 
 CoupeDuMonde::~CoupeDuMonde()
 {
+    delete [] this->eqRencontree;
 }
 
-int CoupeDuMonde::playCDM(std::ifstream& f)
+int CoupeDuMonde::playCDM()
 {
     std::cout << "Bonjour et bienvenue dans cette coupe du monde !" << std::endl;
     std::cout << "Sans plus attendre, passons au premier match !" << std::endl;
+    //std::cout << "\n(Pour continuer, entrez O)" << std::endl;
+
     
     for(int i=0; i<3; i++)
     {
         match m(this->eqControlee,this->eqRencontree[i]);
-        this->nbPoints += m.play_match(f);
+        this->nbPoints += m.play_match();
     }
     if(this->nbPoints <= 3)
     {
@@ -78,11 +67,11 @@ int CoupeDuMonde::playCDM(std::ifstream& f)
     }
     else if(this->nbPoints >= 4 && this->nbPoints < 6)
     {
-        evenement eaf(2,f);
+        evenement eaf(2);
         eaf.playEvenement();
     }
     match mf(this->eqControlee,this->eqRencontree[4]);
-    int final = mf.play_match(f);
+    int final = mf.play_match();
     switch(final)
     {
         case 3:
@@ -102,11 +91,11 @@ int CoupeDuMonde::playCDM(std::ifstream& f)
 
 void CoupeDuMonde::presentation()
 {
-    std::cout<<"Les équipes de cette coupe :"<<std::endl;
-    std::cout << this->eqControlee.getNom() << "\n" << std::endl;
+    std::cout<<"\nLes équipes de cette coupe :"<<std::endl;
+    std::cout << this->eqControlee.getNom() << std::endl;
     for(int i=0; i<4; i++)
     {
-        std::cout << this->eqRencontree[i].getNom() << "\n" << std::endl;
+        std::cout << this->eqRencontree[i].getNom() << std::endl;
     }
-    std::cout << "Nombre de points astuelle de votre équipe : " <<std::to_string(this->nbPoints) << std::endl;
+    std::cout << "\nNombre de points actuelle de votre équipe : " <<std::to_string(this->nbPoints) << "\n" << std::endl;
 }

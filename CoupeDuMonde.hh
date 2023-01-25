@@ -23,7 +23,7 @@ private:
 public:
     CoupeDuMonde();
     ~CoupeDuMonde();
-    int playCDM(std::ifstream& f);
+    int playCDM();
     void presentation();
 };
 

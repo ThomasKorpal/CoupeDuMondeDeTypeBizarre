@@ -68,10 +68,10 @@ void appelSup(int val)
     switch(val)
     {
         case 1:
-            printf("Les dieux du foot et de la pizza vous démontent");
+            printf("Les dieux du foot et de la pizza vous démontent\n");
             break;
         case -1:
-            printf("Les dieux du foot et de la pizza vous bénissent et démontent l'autre équipe");
+            printf("Les dieux du foot et de la pizza vous bénissent et démontent l'autre équipe\n");
             break;
         default:
             break;
