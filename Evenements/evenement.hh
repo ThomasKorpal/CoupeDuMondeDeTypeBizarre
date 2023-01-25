@@ -14,8 +14,6 @@ class evenement
 {
     private:
         std::map<std::string,Effet> event;
-        int isRandom;
-        std::vector<std::string> options; // si isRandom = 0 -> evenement à choix donc options
     public:
         evenement();
         evenement(int lieuEvent); //int lieuEvent pour dire si c'est un evenement dans un match ou entre deux matchs
