@@ -18,6 +18,5 @@ int main()
     evenement eent(1,fi);
     eent.playEvenement();
     */
-    std::cout << std::to_string(m.getMatchState()) << std::endl;
     fi.close();
 }

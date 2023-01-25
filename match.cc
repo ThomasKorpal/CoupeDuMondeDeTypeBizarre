@@ -10,7 +10,7 @@ match::match(Equipe& eq1, Equipe& eq2)
     this->tab_eq=new Equipe[2];
     this->tab_eq[0]=eq1;
     this->tab_eq[1]=eq2;
-    this->matchPlayed = 0;
+    //this->matchPlayed = 0;
 }
 
 match::~match()
@@ -25,7 +25,6 @@ int match::interpreteEffet(Effet ef, int* tabButs, Equipe* eqs)
     gainBut(tabButs, ef[1]);
     appelSup(ef[2]);
     changementVal(eqs, ef[3], 50);
-
     return 1;
 }
 
@@ -35,7 +34,7 @@ int match::interpreteEffet(Effet ef, int* tabButs, Equipe* eqs)
 int match::play_match()
 {
     int buts[2]={0,0};
-    std::cout << "Bonjour et bienvenue dans ce match qui opposera " << this->tab_eq[0].getNom() << " et " << this->tab_eq[1].getNom() << " ! " << std::endl;
+    std::cout << "\nBonjour et bienvenue dans ce match qui opposera " << this->tab_eq[0].getNom() << " et " << this->tab_eq[1].getNom() << " ! " << std::endl;
     std::cout << "N'attendons pas plus !" << std::endl;
 
     evenement event(1);
@@ -50,6 +49,11 @@ int match::play_match()
         {
             std::cout << "C'est parti pour la seconde mi-temps !" << std::endl;
         }
+
+        std::cout << "\n(Pour continuer, entrez une touche)" << std::endl;
+        std::string entrer;
+        std::cin>>entrer;
+
         for(int j=0; j<7; j++)
         {
             double randDou = randomDoubleGenerator(0,1);
@@ -59,13 +63,19 @@ int match::play_match()
                 interpreteEffet(ef,buts,this->tab_eq);
             }
             std::cout << "Temps du jeu " << std::to_string((45*i)+j) << " : " << this->tab_eq[0].getNom() << " " << std::to_string(buts[0]) << ": " << std::to_string(buts[1]) << " " << this->tab_eq[1].getNom() << std::endl;
-            
+            std::cout << "\n(Pour continuer, entrez une touche)" << std::endl;
+            std::string entrer;
+            std::cin>>entrer;
         }
     }
-    this->matchPlayed = 1;
-    if(buts[0] > buts[1]){return 3;}
-    //if(buts[0] == buts[1]){return 0;}
-    if(buts[0] < buts[1]){return -3;}
-
-    return 0; //le compilateur n'aime pas qu'on mets pas un return "global"
+    if(buts[0] > buts[1]){
+        std::cout<<"Félicitation vous avez gagné!!!"<<std::endl;
+        return 3;
+    }else if(buts[0] < buts[1]){
+        std::cout<<"Quel dommage, vous avez perdu ce match!"<<std::endl;
+        return -3;
+    }else{
+        std::cout<<"Ce match fini sur une égalité quel deception...."<< std::endl;
+        return 0;
+    }
 }

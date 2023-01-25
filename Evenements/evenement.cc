@@ -43,7 +43,6 @@ Effet evenement::playEvenement()
     std::advance(it,i);
     std::cout << "\n" <<it->first << std::endl;
 
-
     if(it->second.getRandom()==1){
         for (size_t i = 0; i < it->second.getOptions().size(); i++) 
         {

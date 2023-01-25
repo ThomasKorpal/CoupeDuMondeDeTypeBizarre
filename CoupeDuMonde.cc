@@ -30,7 +30,7 @@ CoupeDuMonde::CoupeDuMonde()
         int test = 0;
         for(int j=0; j<4; j++)
         {
-            if("Equipe de " + tab_pays[tirage] == this->eqRencontree[j].getNom()){
+            if("Equipe de " + tab_pays[tirage] == this->eqRencontree[j].getNom() || tirage==choix){
                 test = 1;
             }
         }
@@ -52,13 +52,18 @@ int CoupeDuMonde::playCDM()
 {
     std::cout << "Bonjour et bienvenue dans cette coupe du monde !" << std::endl;
     std::cout << "Sans plus attendre, passons au premier match !" << std::endl;
-    //std::cout << "\n(Pour continuer, entrez O)" << std::endl;
+    std::cout << "\n(Pour continuer, entrez une touche)" << std::endl;
+    std::string entrer;
+    std::cin>>entrer;
 
     
     for(int i=0; i<3; i++)
     {
         match m(this->eqControlee,this->eqRencontree[i]);
         this->nbPoints += m.play_match();
+        std::cout << "\n(Pour continuer, entrez une touche)" << std::endl;
+        std::cin>>entrer;
+
     }
     if(this->nbPoints <= 3)
     {

@@ -13,8 +13,6 @@ class match
 private:
     int score; //1 si eq1 gagne, 0 si match nul, -1 si eq2 gagne
     double probaEvent;
-    int matchPlayed; //0 si le match n'a pas encore été joué, 1 sinon
-    //std::vector<Equipe> tab_eq;
     Equipe* tab_eq;
 public:
     match();
@@ -23,7 +21,6 @@ public:
     int play_match();
     int interpreteEffet(Effet ef, int* tabButs, Equipe* eqs);
     int getScore(){return this->score;};
-    int getMatchState(){return this->matchPlayed;};
 };
 
 #endif
