@@ -6,11 +6,19 @@ Equipe::Equipe(){}
 Equipe::Equipe(std::string pays, std::ifstream& fichierPrenom)
 {
     std::string nom;
-
+    int tir;
     //Creation des joeurs
     for(int i=0; i<NJOUEURS; i++){
         fichierPrenom>>nom;
-        Joueur j(nom, pays);
+        tir = randomDoubleGenerator(0,1);
+        if(tir>0.98)
+        {
+            JoueurGold j(nom,pays);
+        }
+        else
+        {
+            Joueur j(nom, pays);
+        }
         this->eq.push_back(j);
         this->valeur+=j.getPotentiel();
         this->valeur-=j.getConnerie();
