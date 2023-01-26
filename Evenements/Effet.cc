@@ -7,6 +7,7 @@ Effet::Effet(){
     this->maladieJoueur=0;
 };
 
+//Constructeur qui recueilli tous les effets d'un evenement
 Effet::Effet(int a, int b, int c, int d, typeEvent type, int isRandom, std::string op1, std::string op2){
     this->blessureJoueur=a;
     this->butMarque=b;
@@ -20,9 +21,9 @@ Effet::Effet(int a, int b, int c, int d, typeEvent type, int isRandom, std::stri
 
 Effet::~Effet(){}
 
+//Change les données selon le type de l'evenement
 void Effet::changementChoix(int choix)
 {
-    //int proba;
     switch(this->type)
     {
         case TBUT:
@@ -39,7 +40,7 @@ void Effet::changementChoix(int choix)
     }
 }
 
-
+//Change les données selon le choix de l'utilisateur lors d'un evenement de type BUT
 void Effet::effetBut(int choix){
     int proba;
     switch(choix)
@@ -65,13 +66,17 @@ void Effet::effetBut(int choix){
     }
 }
 
+//Change les données selon le choix de l'utilisateur lors d'un evenement de type JOUEUR ou EQUIPE
 void Effet::effetJ_E(int choix){
     int proba;
     switch(choix)
     {
         case 1:
+            //lorsque l'utilisateur choisit l'option 1
+            //l'evenement se realise si seulement on genere un nombre au dessus de 0.75
             proba = randomDoubleGenerator(0,1);
-            if(proba >= 0.75)
+            std::cout<<proba<<std::endl;
+            if(proba >= 0.55)
             {
                 this->blessureJoueur = 1;
                 this->maladieJoueur = 1;
@@ -92,6 +97,8 @@ void Effet::effetJ_E(int choix){
             break;
     }
 }
+
+//Des getter pour recuper certains attributs
 
 typeEvent Effet::getType(){
     return this->type;

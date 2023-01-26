@@ -11,7 +11,6 @@
 class match
 {
 private:
-    int score; //1 si eq1 gagne, 0 si match nul, -1 si eq2 gagne
     double probaEvent;
     Equipe* tab_eq;
 public:
@@ -20,7 +19,6 @@ public:
     ~match();
     int play_match();
     int interpreteEffet(Effet ef, int* tabButs, Equipe* eqs);
-    int getScore(){return this->score;};
 };
 
 #endif

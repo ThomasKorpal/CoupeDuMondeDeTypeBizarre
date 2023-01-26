@@ -30,6 +30,7 @@ void participant::presentation()
     std::cout << "Nom : " << this->Nom << " Pays : " << this->pays << "\n" << std::endl;
 }
 
+//permet de convertir un type en string
 std::string participant::vers_string(type role)
 {
     std::string res;

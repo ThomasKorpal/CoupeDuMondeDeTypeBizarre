@@ -3,6 +3,8 @@
 
 std::string tab_pays[20]={"FRANCE","ESPAGNE","ANGLETERRE","COREE","ITALIE","GRECE","ALLEMAGNE","MEXIQUE","JAPON","ARGENTINE","BELGIQUE","CROATIE","MAROC","PORTUGAL","LIBAN","PAYS-BAS","EGYPTE","ALGERIE","CHINE"};
 
+
+//Mise en place de la coupe du monde : choix de votre equipe et des equipe que vous allez affronter
 CoupeDuMonde::CoupeDuMonde()
 {
     //Choix de l'équipe de l'utilisateur
@@ -48,6 +50,7 @@ CoupeDuMonde::~CoupeDuMonde()
     delete [] this->eqRencontree;
 }
 
+//Lancement du jeu de la coupe du monde
 int CoupeDuMonde::playCDM()
 {
     std::cout << "Bonjour et bienvenue dans cette coupe du monde !" << std::endl;
@@ -56,7 +59,7 @@ int CoupeDuMonde::playCDM()
     std::string entrer;
     std::cin>>entrer;
 
-    
+    //D'abord trois premier match que vous allez disputer pour voir si vous allez en final
     for(int i=0; i<3; i++)
     {
         match m(this->eqControlee,this->eqRencontree[i]);
@@ -65,18 +68,23 @@ int CoupeDuMonde::playCDM()
         std::cin>>entrer;
 
     }
+    //Si vous avez reussi a cumuler assez de point votre aventure s'arrete ici
     if(this->nbPoints <= 3)
     {
         std::cout << "Coup dur pour l'utilisateur du jeu français, sa coupe du monde s'arrête ici.." << std::endl;
         return 0;
     }
+    //Apparition d'evenement entre deux matchs
     else if(this->nbPoints >= 4 && this->nbPoints < 6)
     {
         evenement eaf(2);
         eaf.playEvenement();
     }
+    //match final
     match mf(this->eqControlee,this->eqRencontree[4]);
     int final = mf.play_match();
+
+    //Resulat de la coupe du monde
     switch(final)
     {
         case 3:
@@ -94,6 +102,7 @@ int CoupeDuMonde::playCDM()
     return 1;
 }
 
+//Presentation des participant à la coupe du monde
 void CoupeDuMonde::presentation()
 {
     std::cout<<"\nLes équipes de cette coupe :"<<std::endl;

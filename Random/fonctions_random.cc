@@ -1,25 +1,6 @@
 #include "fonctions_random.hh"
 
-/*
-std::string vers_string(type role)
-{
-    std::string res;
-    switch(role)
-    {
-        case 0:
-            res="JOUEUR";
-            break;
-        case 1:
-            res="COACH";
-            break;
-        default:
-            res="UNDEFINED";
-            break;
-    }
-    return res;
-}
-*/
-
+//fonction permettant de genere un chiffre à virgule entre lower et upper
 double randomDoubleGenerator(double lower, double upper)
 {
    std::uniform_real_distribution<double> unif(lower,upper);
@@ -28,11 +9,7 @@ double randomDoubleGenerator(double lower, double upper)
    return a_random_double;
 }
 
-void randomIntroGenerator(Equipe tab_eq[]){
-
-}
-
-
+//permet de changer la valeur d'une equipe
 void changementVal(Equipe* eqs, int val, int perte)
 {
     switch(val)
@@ -48,6 +25,7 @@ void changementVal(Equipe* eqs, int val, int perte)
     }
 }
 
+//permet de changer le nombre de but d'un equipe
 void gainBut(int* tabButs, int val)
 {
     switch(val)
@@ -63,6 +41,7 @@ void gainBut(int* tabButs, int val)
     }
 }
 
+//lorsque un evenement est de type intervention d'un etre superieur
 void appelSup(int val)
 {
     switch(val)
@@ -76,30 +55,4 @@ void appelSup(int val)
         default:
             break;
     }
-}
-
-/*
-int interpreteEffet(Effet ef, int* tabButs, Equipe* eqs)
-{
-    int* tab = ef.getEffet();
-    changementVal(eqs, tab[0], 100);
-    gainBut(tabButs, tab[1]);
-    appelSup(tab[2]);
-    changementVal(eqs, tab[3], 50);
-
-    delete [] tab;    
-    return 1;
-}
-*/
-
-bool tabContient(int array[], int size, int number) 
-{
-    for (int i = 0; i < size; i++) 
-    {
-        if (array[i] == number) 
-        {
-            return true;
-        }
-    }
-    return false;
 }

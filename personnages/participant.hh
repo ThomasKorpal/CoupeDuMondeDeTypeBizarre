@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 #include <time.h>
-//#include "../Random/fonctions_random.hh"
 
 typedef enum {JOUEUR,COACH, UNDEFINED} type;
 

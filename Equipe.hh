@@ -24,7 +24,6 @@ public:
     int getValeur(){return this->valeur;};
     std::string getNom(){return this->nom;};
     void setValeur(int changement){(this->valeur)-=changement;};
-    void GoodBye(std::string nom);
 };
 
 #endif

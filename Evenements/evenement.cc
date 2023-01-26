@@ -3,6 +3,8 @@
 
 evenement::evenement(){}
 
+//Constructeur qui permet de récuperer tous les événements et les stocker dans la map
+//lieuEvent permet de séparer les evenement dans les matchs e de ceux entre les match
 evenement::evenement(int lieuEvent)
 {
     std::string intitule, blessureJoueur, butMarque, interventionDesDieux, maladieJoueur, type, isRandom, r1, r2;
@@ -10,8 +12,9 @@ evenement::evenement(int lieuEvent)
 
     std::ifstream fichierEvent("Evenements/evenement_effet.csv");
     std::string poub;
-    fichierEvent>>poub;
+    fichierEvent>>poub; //La première lignes contient le nom des colonnes
 
+    //Recuperation de cahque données colonne par colonne
     while(!fichierEvent.eof()){
         std::getline(fichierEvent, intitule, ',');
         std::getline(fichierEvent, blessureJoueur, ',');
@@ -34,15 +37,17 @@ evenement::evenement(int lieuEvent)
 
 evenement::~evenement(){}
 
+
+//Permet de selectionner au hasard dans le map un evenement
 Effet evenement::playEvenement()
 {
-
     int i=rand()%this->event.size();
 
     std::map<std::string, Effet>::iterator it=this->event.begin();
     std::advance(it,i);
     std::cout << "\n" <<it->first << std::endl;
 
+    //certains evenement propose des choix entre deux options
     if(it->second.getRandom()==1){
         for (size_t i = 0; i < it->second.getOptions().size(); i++) 
         {
@@ -55,6 +60,7 @@ Effet evenement::playEvenement()
     return it->second;
 }
 
+//convertit un string en typeEvent
 typeEvent evenement::vers_type(std::string t){
     if(t=="JOUEUR"){
         return TJOUEUR;
