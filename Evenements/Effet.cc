@@ -46,15 +46,21 @@ void Effet::effetBut(int choix){
     switch(choix)
     {
         case 1:
-            proba = randomDoubleGenerator(0,1);
-            if(proba >= 0.5)
+            proba = rand()%101;
+            if(proba >= 55)
             {
                 this->butMarque = -1;
+                if(this->interventionDesDieux!=0){
+                    this->interventionDesDieux=1;
+                }
                 std::cout << "La chance n'est pas en votre faveur à ce que je vois..." << std::endl;
             }
             else
             {
                 this->butMarque = 1;
+                if(this->interventionDesDieux!=0){
+                    this->interventionDesDieux=-1;
+                }
                 std::cout << "Quelle chance !" << std::endl;
             }
             break;
@@ -74,12 +80,14 @@ void Effet::effetJ_E(int choix){
         case 1:
             //lorsque l'utilisateur choisit l'option 1
             //l'evenement se realise si seulement on genere un nombre au dessus de 0.75
-            proba = randomDoubleGenerator(0,1);
-            std::cout<<proba<<std::endl;
-            if(proba >= 0.55)
+            proba = rand()%101;
+            if(proba >= 55)
             {
                 this->blessureJoueur = 1;
                 this->maladieJoueur = 1;
+                if(this->interventionDesDieux!=0){
+                    this->interventionDesDieux=1;
+                }
                 std::cout << "La chance n'est pas en votre faveur à ce que je vois..." << std::endl;
             }
             else
@@ -87,6 +95,9 @@ void Effet::effetJ_E(int choix){
                 this->blessureJoueur -=1;
                 if(this->blessureJoueur < -1)
                     this->blessureJoueur = -1;
+                if(this->interventionDesDieux!=0){
+                    this->interventionDesDieux=-1;
+                }
                 std::cout << "Quelle chance !" << std::endl;
             }
             break;

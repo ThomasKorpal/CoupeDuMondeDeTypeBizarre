@@ -6,6 +6,7 @@
 #include <fstream>
 #include "personnages/Joueur.hh"
 #include "personnages/Coach.hh"
+#include "personnages/JoueurGold.hh"
 
 #define NJOUEURS 11
 

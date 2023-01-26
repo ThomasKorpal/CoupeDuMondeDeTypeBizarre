@@ -23,8 +23,10 @@ Un joueurs a reçu du ciel un plaque d'aluminium sur la tête,1,0,1,0,JOUEUR,1,T
 Les anges ont décidé d'inverser les cages des équipes au moment ou vous allez marquer,0,-1,1,0,BUT,0,,
 Vos joueurs se sont fait un entorse en s’échauffant,1,0,0,0,EQUIPE,0,,
 Les chaussures de vos adversaires semblent être piégée,-1,0,0,0,EQUIPE,0,,
+Le gardien adverse est parti poursuivre ses gants qui par magie ont commencé à marcher,0,1,-1,0,BUT,0,,
 Un joueur adverse ne sait plus marcher et est tombé,-1,0,0,0,JOUEUR,0,,
 Un de vos supporter a décidé de lancer des shurikens en papier sur vos adversaires,-1,0,0,0,JOUEUR,1,Voulez vous le rejoindre et tenter de ne pas vous faire prendre en risquant des pénalités ,Sinon laisser faire vos supporter
 Un individu suspect a contaminé l’eau de votre équipe,0,0,0,1,JOUEUR,1,Enquêter et retrouver l’individu en risquant des gros risques,Sinon appeler la police
 Mi-temps arrivé et vos serviettes sont remplies de poils à gratter,1,0,0,0,EQUIPE,0,,
 Un joueur a décidé de manger un cupcake avarié (pourquoi : demandez pas),0,0,0,1,JOUEUR,0,,
+Le gardien adverse se retrouve avec un sac sur la tête et se cogne contre le poteau,-1,1,0,0,BUT,0,,

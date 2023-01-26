@@ -32,7 +32,7 @@ CoupeDuMonde::CoupeDuMonde()
         int test = 0;
         for(int j=0; j<4; j++)
         {
-            if("Equipe de " + tab_pays[tirage] == this->eqRencontree[j].getNom() || tirage==choix){
+            if("Equipe de " + tab_pays[tirage] == this->eqRencontree[j].getNom() || tirage==choix-1){
                 test = 1;
             }
         }
